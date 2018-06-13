@@ -213,14 +213,10 @@
 
 
 
-    <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
-
     <!-- Import jQuery -->
     
         <script>lsloader.load("jq_js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
     
-
-    <script>lsloader.load("jq_fb_js","/js/jquery.fancybox.min.js?t2LXoiIDGJmos9j6jmohzw==", true)</script>
 
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -307,6 +303,7 @@
 
     <!-- Custom Head -->
     
+
 </head>
 
 
@@ -846,13 +843,6 @@ It will not impact the appearance and can give developers a lot of support :)
         NProgress.done();
         $('.fade').removeClass('out');
     }, 800);
-
-    $(document).ready(function() {
-        $("p img").each(function() {
-            var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
-            $(this).wrapAll(strA);
-        });
-    });
 </script>
 
 

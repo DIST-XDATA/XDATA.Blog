@@ -499,55 +499,55 @@
 <a id="more"></a>
 <h2 id="添加返回顶部按钮"><a href="#添加返回顶部按钮" class="headerlink" title="添加返回顶部按钮"></a>添加返回顶部按钮</h2><ol>
 <li><p>打开\themes\landscape\layout_partial,新建文件名称为totop.ejs.</p>
-<pre><code>&lt;div id=&quot;totop&quot;&gt;
-    &lt;a title=&quot;javascript:;&quot;&gt;返回&lt;br&gt;顶部&lt;/a&gt;
-&lt;/div&gt;
+<pre><code> &lt;div id=&quot;totop&quot;&gt;
+     &lt;a title=&quot;javascript:;&quot;&gt;返回&lt;br&gt;顶部&lt;/a&gt;
+ &lt;/div&gt;
 </code></pre></li>
 <li><p>打开\themes\landscape\source\js,新建文件totop.js.</p>
-<pre><code>(function($) {
-    var upperLimit = 1000;
+<pre><code> (function($) {
+     var upperLimit = 1000;
 
-    // Our scroll link element
-    var scrollElem = $(&apos;#totop&apos;);
+     // Our scroll link element
+     var scrollElem = $(&#39;#totop&#39;);
 
-    // Scroll to top speed
-    var scrollSpeed = 1600;
-    scrollElem.hide();
-    $(window).scroll(function () {
-        var scrollTop = $(document).scrollTop();
-        if ( scrollTop &gt; upperLimit ) {
-            $(scrollElem).stop().fadeTo(300, 1); 
-        }else{
-            $(scrollElem).stop().fadeTo(300, 0); 
-        }
-    });
-    $(scrollElem).click(function(){
-        $(&apos;html, body&apos;).animate({scrollTop:0}, scrollSpeed); return false;
-    });
-})(jQuery);
+     // Scroll to top speed
+     var scrollSpeed = 1600;
+     scrollElem.hide();
+     $(window).scroll(function () {
+         var scrollTop = $(document).scrollTop();
+         if ( scrollTop &gt; upperLimit ) {
+             $(scrollElem).stop().fadeTo(300, 1); 
+         }else{
+             $(scrollElem).stop().fadeTo(300, 0); 
+         }
+     });
+     $(scrollElem).click(function(){
+         $(&#39;html, body&#39;).animate({scrollTop:0}, scrollSpeed); return false;
+     });
+ })(jQuery);
 </code></pre></li>
 <li><p>打开\themes\landscape\layout_partial\after_footer.ejs,添加代码</p>
-<pre><code>&lt;%- partial(&apos;totop&apos;) %&gt;
-&lt;script src=&quot;&lt;%- config.root %&gt;js/totop.js&quot;&gt;&lt;/script&gt;
+<pre><code> &lt;%- partial(&#39;totop&#39;) %&gt;
+ &lt;script src=&quot;&lt;%- config.root %&gt;js/totop.js&quot;&gt;&lt;/script&gt;
 </code></pre></li>
 <li><p>设置样式,打开\themes\landscape\source\css_partial,创建文件totop.styl,添加样式代码</p>
-<pre><code>#totop
-    position:fixed
-    bottom:50px
-    right:30px
-    text-align: center
-    z-index: 100
-    a
-        display: block
-        padding 4px 8px
-        color: #fff
-        background-color: #258fb8
-        cursor: pointer
-        border-radius: 5px
-        &amp;:hover
-            opacity: .8
+<pre><code> #totop
+     position:fixed
+     bottom:50px
+     right:30px
+     text-align: center
+     z-index: 100
+     a
+         display: block
+         padding 4px 8px
+         color: #fff
+         background-color: #258fb8
+         cursor: pointer
+         border-radius: 5px
+         &amp;:hover
+             opacity: .8
 </code></pre><p> 打开\themes\landscape\source\css\style.styl,添加代码</p>
-<pre><code>@import &quot;_partial/totop&quot;
+<pre><code>     @import &quot;_partial/totop&quot;
 </code></pre></li>
 </ol>
 

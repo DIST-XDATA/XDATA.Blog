@@ -1104,6 +1104,32 @@ style.css       424 bytes  1  [emitted]  app
                 <!-- Post Comments -->
                 
                     
+    <!-- 使用 gitcoment -->
+<div id="gitment-comment">
+    <!-- Gitment 评论框 -->
+<div id="container"></div>
+</div>
+<style>
+    #gitment-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        //id: '页面 ID', // 可选。默认为 location.href
+        owner: 'Hertz9409',
+        repo: 'dist-xdata.github.io',
+        oauth: {
+            client_id: '0d96b743114c3388ac0e',
+            client_secret: '3afa368ace511a47ff0ce3d70cf389244470cd80',
+        },
+    })
+    gitment.render('container')
+</script>
+
                 
             </div>
 
@@ -1445,6 +1471,8 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
+
+   <!-- Gitment -->
 
 
 

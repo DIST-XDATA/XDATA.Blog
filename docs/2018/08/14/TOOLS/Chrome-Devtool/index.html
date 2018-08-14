@@ -43,7 +43,7 @@
     
     <title>
         
-            about | 
+            Chrome_Devtool | 
         
         DIST.XDATA Blog
     </title>
@@ -53,8 +53,8 @@
     <link rel="icon" href="/XDATA.Blog/img/favicon.png">
 
     <meta name="format-detection" content="telephone=no"/>
-    <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="Web XDATA">
+    <meta name="description" itemprop="description" content="基于Chrome DevTools的Web应用程序的性能分析">
+    <meta name="keywords" content="Web XDATA,chrome devtool 性能分析 内存泄露">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -81,6 +81,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/XDATA.Blog/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/XDATA.Blog/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/XDATA.Blog/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -217,7 +220,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="DIST.XDATA Blog">
-    <meta name="msapplication-starturl" content="https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/about/">
+    <meta name="msapplication-starturl" content="https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/08/14/TOOLS/Chrome-Devtool/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="DIST.XDATA Blog">
@@ -232,13 +235,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/about/">
+    <meta property="og:url" content="https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/08/14/TOOLS/Chrome-Devtool/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="about | DIST.XDATA Blog">
+    <meta property="og:title" content="Chrome_Devtool | DIST.XDATA Blog">
     <meta property="og:image" content="/XDATA.Blog/img/favicon.png">
-    <meta property="og:description" content="">
-    
+    <meta property="og:description" content="基于Chrome DevTools的Web应用程序的性能分析">
+    <meta property="og:article:tag" content="chrome devtool 性能分析 内存泄露"> 
 
+    
+        <meta property="article:published_time" content="Tue Aug 14 2018 09:08:33 GMT+0800">
+        <meta property="article:modified_time" content="Tue Aug 14 2018 09:11:04 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -246,13 +252,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/about/index.html" />
+        <link rel="canonical" href="https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/08/14/TOOLS/Chrome-Devtool/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/08/14/TOOLS/Chrome-Devtool/index.html",
+    "headline": "Chrome_Devtool",
+    "datePublished": "Tue Aug 14 2018 09:08:33 GMT+0800",
+    "dateModified": "Tue Aug 14 2018 09:11:04 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "XDATA",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "DIST.XDATA Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",chrome devtool 性能分析 内存泄露Web XDATA",
+    "description": "基于Chrome DevTools的Web应用程序的性能分析",
+}
+</script>
 
 
     
@@ -288,6 +324,39 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前端页面渲染——原理："><span class="post-toc-number">1.</span> <span class="post-toc-text">前端页面渲染——原理：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Performanance的使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">Performanance的使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Memory的使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">Memory的使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#内存泄漏的原因："><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">内存泄漏的原因：</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结语"><span class="post-toc-number">4.</span> <span class="post-toc-text">总结语</span></a></li></ol>
+    </ul>
+    
+
+
+
 
 <!-- Layouts -->
 
@@ -314,7 +383,7 @@
         
     
             <p class="article-headline-p">
-                about
+                Chrome_Devtool
             </p>
         </div>
 
@@ -333,7 +402,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>XDATA</strong>
-        <span>6月 13, 2018</span>
+        <span>8月 14, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -355,13 +424,22 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://dist-xdata.github.io/XDATA.Blog/about/index.html">
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://dist-xdata.github.io/XDATA.Blog/2018/08/14/TOOLS/Chrome-Devtool/">
     
 </ul>
 
     
 
     <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/XDATA.Blog/tags/chrome-devtool-性能分析-内存泄露/">chrome devtool 性能分析 内存泄露</a>
+    </ul>
     
 
     <!-- Share -->
@@ -377,7 +455,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=about&url=https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/about/index.html&pic=https://dist-xdata.github.io/XDATA.Blog/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Chrome_Devtool&url=https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/08/14/TOOLS/Chrome-Devtool/index.html&pic=https://dist-xdata.github.io/XDATA.Blog/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -398,7 +476,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=DIST.XDATA Blog&title=about&summary=&pics=https://dist-xdata.github.io/XDATA.Blog/img/favicon.png&url=https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/about/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=DIST.XDATA Blog&title=Chrome_Devtool&summary=&pics=https://dist-xdata.github.io/XDATA.Blog/img/favicon.png&url=https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/08/14/TOOLS/Chrome-Devtool/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -417,7 +495,151 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="关于团队"><a href="#关于团队" class="headerlink" title="关于团队"></a>关于团队</h1><h3 id="github-DIST-XDATA"><a href="#github-DIST-XDATA" class="headerlink" title="github: DIST-XDATA"></a>github: DIST-XDATA</h3>
+        <p>基于Chrome DevTools的Web应用程序的性能分析</p>
+<a id="more"></a>
+<p>=======</p>
+<h2 id="前端页面渲染——原理："><a href="#前端页面渲染——原理：" class="headerlink" title="前端页面渲染——原理："></a>前端页面渲染——原理：</h2><p><strong>定义：</strong>  即是web用户在访问一个页面时所要花费的时间总和。即一个完全意义上的用户响应时间，相对于服务器的响应时间而言还会包括更多的内容和影响因素。那么一个web页面的完整请求包括了哪些部分的时间总和就是web前端性能分析和优化所需要了解的基础知识，先了解一下用户从浏览器访问一个url后到页面完全展示所有内容的整个过程吧。    </p>
+<p><strong>页面请求的过程：</strong></p>
+<ol>
+<li>浏览器的url请求  </li>
+<li>递归寻找DNS服务器 </li>
+<li>连接目标IP并建立TCP连接   </li>
+<li>向目标服务器发送http请求  </li>
+<li>web服务器接收请求后处理   </li>
+<li>web服务器返回相应的结果【无效、重定向、正确页面等】   </li>
+<li>浏览器接收返回的http内容 </li>
+</ol>
+<p><strong>页面解析的过程：</strong>    </p>
+<ol>
+<li>Dom Tree：浏览器将html解析成一个dom树，dom树的创建时一个深遍历的过程。</li>
+<li>Css Rule Tree：将css样式全部解析成Css Rule Tree的规则树。</li>
+<li>Render Tree：将Dom Tree和Css Rule Tree结合进行Render Tree的构建，Render Tree不同于Dom Tree，它将一些没有必要渲染的dom节点进行了相应的处理，例如：header标签，display为none的标签元素等。</li>
+<li>layout：有了Render Tree我们就可以对每个节点在屏幕中的位置进行计算处理。</li>
+<li>paiting: 最后通过位置和样式进行相应的节点进行绘制展示在前端页面上。</li>
+</ol>
+<p><strong>影响前端流畅相应的因素（回流与重绘）</strong><br>减少Render Tree的回流和重绘，主要需要处理的是<strong>回流</strong>问题。<br><strong>定义：</strong><br><strong>回流：</strong> Render Tree中的元素因为尺寸，布局，隐藏等改变而需要重新构建，这就叫做回流（reflow）。</p>
+<p><strong>重绘</strong>：当Render Tree的一部分元素需要更新元素，而这些元素只是外观，风格不影响布局，则叫做重绘。 </p>
+<p><strong>注：</strong> 回流必定带来重绘，而重绘不一定会回流，回流带来页面渲染的工作量打，过多的回流容易造成页面的卡顿。</p>
+<p><strong>浏览器的优化策略：</strong><br>一般浏览器都会进行回流的优化处理，因为回流的代价比较大，所以如果每一个操作都需要进行回流处理，那么浏览器很容易承受不住，于是浏览器自身就进行了优化处理，将回流和重绘操作放置在一个队列中，在到达一定时间或者一定数量则进行<strong>批量</strong>的处理，这样将多次的回流和重绘操作减少成为一次的操作。</p>
+<p><strong>前端注意：</strong><br>一些操作可能提前强制浏览器对<strong>队列</strong>进行flush，例如在向浏览器请求一些style信息时就可能造成队列flush。</p>
+<ol>
+<li>请求offsetTop、offsetLeft、offsetWidth、offsetHeight时</li>
+<li>请求scrollTop、scrollLeft、scrollWidth、scrollHeight</li>
+<li>请求clientTop、clientLeft、clentWidth、clientHeight</li>
+<li>请求getComputedStyle()计算样式时 </li>
+</ol>
+<p>因为请求一些属性时，浏览器为了给精确的值，队列中的一些操作可能会影响到这些值，那么即使获取元素的布局和样式信息根最近发生或者改变的布局信息无关，浏览器都会强行刷新渲染队列。</p>
+<p><strong>减少回流的策略：</strong> 减少回流和重绘其实就是减少对Render Tree的操作，减少对一些style信息的请求，尽量利用浏览器的优化策略。</p>
+<ol>
+<li>直接改变className，如果动态改变样式则使用cssText（考虑没有优化浏览器）<pre><code> // 不好的写法
+ var left = 1;
+ var top = 1;
+ el.style.left = left + &#39;px&#39;;
+ el.style.top = top + &#39;px&#39;;
+ // 比较好的写法
+ el.className = &#39;class1&#39;;
+</code></pre></li>
+<li><p>让操作元素进行“离线处理”，处理完一起更新<br>a) 使用DocumentFragment进行缓存操作,引发一次回流和重绘；  </p>
+<pre><code>// 不好的写法
+var p = document.createElement(&#39;p&#39;);
+var t = document.createTextNode(&#39;text1&#39;);
+p.appendChild(t);
+document.appendChild(p); // 引起一次回流
+p = document.createElement(&#39;p&#39;);
+t = document.createTextNode(&#39;text2&#39;);
+p.appendChild(t);
+document.body.appendChild(p); // 又引起一次回流
+// 比较好的写法
+var farg = document.creatDocumentFragment();
+var p = document.creatElement(&#39;p&#39;);
+var t = document.creatTextNode(&#39;text1&#39;);
+p.appendChild(t);
+farg.appendChild(p);
+p = document.creatElement(&#39;p&#39;);
+t = document.creatTextNode(&#39;text2&#39;);
+p.appendChild(t);
+farg.appendChild(p);
+document.body.appendChild(frag); // 这样只会引起一次回流
+</code></pre><p>b) 使用display:none技术，只引发两次回流和重绘；  </p>
+<pre><code>var container = document.getElementById(&#39;div1&#39;);
+container.style.display = &#39;none&#39;; // 引起一次回流
+for (var i = 0; i &lt; 10; i++) {
+  var p = document.createElement(&#39;p&#39;);
+  var t = document.creatTextNode(&#39;text&#39; + i);
+  container.appendChild(p);
+}
+container.style.display = &#39;block&#39;; // 引起另外一次回流
+</code></pre><p>c) 使用cloneNode(true or false) 和 replaceChild 技术，引发一次回流和重绘； </p>
+<pre><code>//建立克隆镜像
+var oldNode = document.getElementById(&#39;target&#39;),
+clone = oldNode.cloneNode(true);   //深复制
+//   处理克隆对象的操作....
+//完成后
+oldNode.parentNode.replaceChild(clone,oldNode);
+</code></pre></li>
+<li><p>不要经常访问会flush队列的属性，如果确定要访问，则多利用缓存</p>
+<pre><code>// 不好的方式
+for(循环) {
+  el.style.left = el.offsetLeft + 5 + &#39;px&#39;;
+  el.style.top = el.offsetTop + 5 + &#39;px&#39;;
+}
+
+// 好的方式
+var left = el.offsetLeft,
+top = el.offsetTop,
+s = el.style; 
+for (循环) { 
+  left += 10; 
+  top += 10; 
+  s.left = left + &#39;px&#39;; 
+  s.top = top + &#39;px&#39;; 
+}
+</code></pre></li>
+<li>让元素脱离动画流，减少回流的Render Tree的规模</li>
+</ol>
+<h2 id="Performanance的使用"><a href="#Performanance的使用" class="headerlink" title="Performanance的使用"></a>Performanance的使用</h2><p><strong>Chrome Performance：</strong> 主要是用于页面性能分析，可进行页面状态、事件、运行、内存查看，通过操作页面查看性能情况，进行分析定位。<br>Demo测试： <a href="https://googlechrome.github.io/devtools-samples/jank/" target="_blank" rel="noopener">https://googlechrome.github.io/devtools-samples/jank/</a></p>
+<p>1、先对移动方块进行添加，添加至页面进行卡顿，因为每台机器的性能不同，添加至一定数目之后才会造成卡顿<br><img src="png1.png" alt="image">      </p>
+<p>2、打开开发者工具进行performance的记录得到分析数据的展示情况。<br><img src="png2.png" alt="image">      </p>
+<p>1) 数据展示主要的花费事件在于Rendering<br><img src="png3.png" alt="image">      </p>
+<p>2) fps显示红色提醒，卡顿，缩放至细节查看<br><img src="png4.png" alt="image"><br><img src="png5.png" alt="image">  </p>
+<p>3) 点击有红色三角的Recalculate Style的调用栈。<br>    发现有提示可能发生回流情况，点击reveal查看详细信息。<br>    <img src="png6.png" alt="image">      </p>
+<pre><code>进入代码查看在app.js的70行代码发生了回流情况。      
+![image](png7.png)      
+
+发现在其中多次访问了offsetTop的属性，造成了回流问题。       
+![image](png8.png)      
+</code></pre><p>3、在采用另外一种优化性能方式查看代码（获取样式top缓存处理不多次访问），发现页面流畅了很多。<br><img src="png9.png" alt="image">  </p>
+<h2 id="Memory的使用"><a href="#Memory的使用" class="headerlink" title="Memory的使用"></a>Memory的使用</h2><p><strong>Chrome Memory：</strong> 主要是用于深度性能分析，提供记录场景运行、记录堆快照、记录堆分配等三个功能实现对渲染性能和内存泄漏的分析定位。</p>
+<p><strong>快照的方式</strong><br>Demo测试： <a href="https://handsome-hang.github.io/test/chrome/" target="_blank" rel="noopener">https://handsome-hang.github.io/test/chrome/</a><br>目前采用比较多的方式是是使用快照对比来完成，如图：  </p>
+<p>1、首先在初始化页面进行一次快照处理记录初始化状态。（基本参照）<br><img src="memory_png1.png" alt="image">  </p>
+<p>2、然后进行点击添加按钮进行widget的创建添加。<br><img src="memory_png2.png" alt="image">  </p>
+<p>3、接着进行删除操作对widget进行了移除处理，进行一次快照获取。<br><img src="memory_png3.png" alt="image">   </p>
+<p>4、然后反复先前操作进行快照记录处理。<br><img src="memory_png4.png" alt="image">   </p>
+<p>可以发现内存在一次次操作后得到的快照内存大小不断的在增长，这个时候就可以判断出应该是有内存泄漏没有被回收。<br><img src="memory_png6.png" alt="image">   </p>
+<p>5、将获取的快照进行对比处理。<br><img src="memory_png5.png" alt="image">   </p>
+<p>6、对引用类型（以Detached DOM 为例子）进行分析查看， #Delta是否有不断增加，如果有则是有异常内存泄漏。<br><img src="memory_png7.png" alt="image">       </p>
+<p>7、查看详细增长内容有属性被哪些地方引用而导致没有办法回收，发现widget的一些信息没有被回收而一直存在。     </p>
+<p><img src="memory_png8.png" alt="image"><br>8、通过删除操作找到对应的代码，来查看widget被移除操作中间发生了什么而导致widget内容没有被回收，发现index.html代码中有问题。 </p>
+<pre><code>// 问题所在
+domConstruct.destroy(window.container1.domNode); // 只是移除了dom节点，并没有对widget整个对象进行处理导致有引用存在
+
+// 将widget进行整个摧毁处理调用destroy方法
+window.container.destroy(); //  进行widget的摧毁处理
+</code></pre><p>9、之后再次进行来看内存是否能够被及时的处理，发现内存增长停止了，并且Detached DOM增长没有了，内存被及时的回收防止了内存的泄漏。     </p>
+<p><img src="memory_png9.png" alt="image">   </p>
+<p>Memory还有提供另外两个分析内存的工具。<br><strong>Collect JavaScript CPU Profile：</strong> 记录一段场景cpu的分配使用情况。   </p>
+<p><img src="memory_png10.png" alt="image"><br>对其中对内存影响较大的，并且有提示的方法进行相应的注意和相应的处理  </p>
+<p><img src="memory_png11.png" alt="image"><br><strong>Record Heap Allocations：</strong> 一段记录堆分配内存进行处理    </p>
+<p><img src="memory_png12.png" alt="image"><br>堆突出的蓝条，如果没有释放掉要进行特别注意并且分析其中的情况详情，如果没有释放则需要跟踪代码进行处理        </p>
+<p><img src="memory_png13.png" alt="image">   </p>
+<h4 id="内存泄漏的原因："><a href="#内存泄漏的原因：" class="headerlink" title="内存泄漏的原因："></a>内存泄漏的原因：</h4><p>（1）监听在window/document/body等handler事件没有解绑</p>
+<p>（2）模块形成的闭包内部变量使用完后没有将引入变量设为null</p>
+<p>（3）使用第三方库创建，没有调用正确的销毁函数</p>
+<p>（4）dom的移除若子节点存在引用则无法回收</p>
+<p>（5）widget使用事件的订阅，在摧毁时没有移除</p>
+<h2 id="总结语"><a href="#总结语" class="headerlink" title="总结语"></a>总结语</h2><p>在<strong>Performance</strong>中已经可以完成大多数的性能检测定位。而在其中<strong>Memory</strong>进行详细分析处理内存泄漏问题处理，使用工具处理问题是一部分解决方案，但是根源问题还是在于<strong>编码的规范</strong>问题，如果已经成熟的系统，在内存性能检测上是很麻烦的事情，所以内存性能检测是一个<strong>不断持续</strong>的过程。    </p>
+<p>内容中如果出现什么有错误的地方请及时的提醒，以便进行及时的修正。</p>
+
         
     
 
@@ -445,7 +667,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'Wed Jun 13 2018 13:04:32 GMT+0800', // 可选。默认为 location.href
+        id: 'Tue Aug 14 2018 09:08:33 GMT+0800', // 可选。默认为 location.href
         owner: 'Hertz9409',
         repo: 'Hertz9409.github.io',
         oauth: {
@@ -468,6 +690,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/XDATA.Blog/2018/08/13/MOBILE/用地分析/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -656,6 +886,14 @@ It will not impact the appearance and can give developers a lot of support :)
                     
 
                     
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
 
                     <!--Footer-->
 <footer class="mdl-mini-footer" id="bottom">
@@ -792,6 +1030,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/XDATA.Blog/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -804,6 +1046,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

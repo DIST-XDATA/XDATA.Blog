@@ -1,11 +1,11 @@
 ---
-title: Chrome_Devtool
+title: Chrome-Devtool
 date: 2018-08-14 09:08:33
 tags: chrome devtool 性能分析 内存泄露
 categories: tools
 ---
 
-#基于Chrome DevTools的Web应用程序的性能分析
+# 基于Chrome DevTools的Web应用程序的性能分析
 
 <!-- more -->
 

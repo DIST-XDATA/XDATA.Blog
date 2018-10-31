@@ -242,7 +242,7 @@
 
     
         <meta property="article:published_time" content="Wed Sep 26 2018 09:21:14 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 26 2018 09:39:47 GMT+0800">
+        <meta property="article:modified_time" content="Wed Oct 31 2018 16:29:40 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/09/26/MOBILE/Android Gis开发经验分享/index.html",
     "headline": "",
     "datePublished": "Wed Sep 26 2018 09:21:14 GMT+0800",
-    "dateModified": "Wed Sep 26 2018 09:39:47 GMT+0800",
+    "dateModified": "Wed Oct 31 2018 16:29:40 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "XDATA",
@@ -484,7 +484,8 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="Android-Gis开发经验分享"><a href="#Android-Gis开发经验分享" class="headerlink" title="Android Gis开发经验分享"></a>Android Gis开发经验分享</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="一、地图坐标系的认识"><a href="#一、地图坐标系的认识" class="headerlink" title="一、地图坐标系的认识"></a>一、地图坐标系的认识</h3><h3 id="二、地图管理类的认识"><a href="#二、地图管理类的认识" class="headerlink" title="二、地图管理类的认识"></a>二、地图管理类的认识</h3><h3 id="三、Gis开发熟知"><a href="#三、Gis开发熟知" class="headerlink" title="三、Gis开发熟知"></a>三、Gis开发熟知</h3><h3 id="四、Gis开发平台差异化注意事项"><a href="#四、Gis开发平台差异化注意事项" class="headerlink" title="四、Gis开发平台差异化注意事项"></a>四、Gis开发平台差异化注意事项</h3><h4 id="一、地图坐标系的认识-1"><a href="#一、地图坐标系的认识-1" class="headerlink" title="一、地图坐标系的认识"></a>一、地图坐标系的认识</h4><h4 id="1-WGS84坐标系"><a href="#1-WGS84坐标系" class="headerlink" title="1. WGS84坐标系"></a>1. WGS84坐标系</h4><p>​          一种国际上采用的地心坐标系.  </p>
+        <p>title: Android Gis开发经验分享<br>tags: 移动<br>categories: mobile</p>
+<h1 id="Android-Gis开发经验分享"><a href="#Android-Gis开发经验分享" class="headerlink" title="Android Gis开发经验分享"></a>Android Gis开发经验分享</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="一、地图坐标系的认识"><a href="#一、地图坐标系的认识" class="headerlink" title="一、地图坐标系的认识"></a>一、地图坐标系的认识</h3><h3 id="二、地图管理类的认识"><a href="#二、地图管理类的认识" class="headerlink" title="二、地图管理类的认识"></a>二、地图管理类的认识</h3><h3 id="三、Gis开发熟知"><a href="#三、Gis开发熟知" class="headerlink" title="三、Gis开发熟知"></a>三、Gis开发熟知</h3><h3 id="四、Gis开发平台差异化注意事项"><a href="#四、Gis开发平台差异化注意事项" class="headerlink" title="四、Gis开发平台差异化注意事项"></a>四、Gis开发平台差异化注意事项</h3><h4 id="一、地图坐标系的认识-1"><a href="#一、地图坐标系的认识-1" class="headerlink" title="一、地图坐标系的认识"></a>一、地图坐标系的认识</h4><h4 id="1-WGS84坐标系"><a href="#1-WGS84坐标系" class="headerlink" title="1. WGS84坐标系"></a>1. WGS84坐标系</h4><p>​          一种国际上采用的地心坐标系.  </p>
 <h4 id="2-WGS84-Web墨卡托"><a href="#2-WGS84-Web墨卡托" class="headerlink" title="2.    WGS84 Web墨卡托"></a>2.    WGS84 Web墨卡托</h4><p>​        Web墨卡托是2005年谷歌在谷歌地图中首次使用的,如今主流的Web地图几乎都是使用的Web墨卡托,如：国内的百度地图、高德地图、腾讯地图和天地图等也是基于Web墨卡托（国内地图有加密要求，有两种情况，一种是在 Web墨卡托的基础上经过国家标准加密的国标02坐标系，熟称“火星坐标系”；另一种是在国标的02坐标系下进一步进行加密，如百度地图的BD09坐标系）。<br>​<br><img src="./1537617255888.png" alt="Alt text"></p>
 <h4 id="3-GCJ02经纬度投影"><a href="#3-GCJ02经纬度投影" class="headerlink" title="3.GCJ02经纬度投影"></a>3.GCJ02经纬度投影</h4><p>​        GCJ-02是由中国国家测绘局（G表示Guojia国家，C表示Cehui测绘，J表示Ju局）制订的地理信息系统的坐标系统。它其实就是对真实坐标系统进行人为的加偏处理，按照特殊的算法，将真实的坐标加密成虚假的坐标，而这个加偏并不是线性的加偏，所以各地的偏移情况都会有所不同。而加密后的坐标也常被大家称为“火星坐标系统”。<br>​        该坐标系的坐标值为经纬度格式，单位为度； GCJ02经纬度投影，就是在WGS84经纬度的基础之上，进行GCJ-02加偏；BD09经纬度投影属于百度坐标系，它是在标准经纬度的基础上进行GCJ-02加偏之后，再加上百度自身的加偏算法，也就是在标准经纬度的基础之上进行了两次加偏。</p>
 <h4 id="4-GCJ02-Web-墨卡托投影"><a href="#4-GCJ02-Web-墨卡托投影" class="headerlink" title="4.GCJ02 Web 墨卡托投影"></a>4.GCJ02 Web 墨卡托投影</h4><p>​       该坐标系的坐标值为Web墨卡托格式，单位为米；这里的GCJ02 Web 墨卡托，也就是在标准Web默卡托的基础之上，进行GCJ-02加偏。</p>

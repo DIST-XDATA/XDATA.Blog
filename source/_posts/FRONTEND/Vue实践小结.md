@@ -1,8 +1,8 @@
 ---
 title: Vue 实践小结
 date: 2018-11-04 09:42:07
-tags: [vue]
-categories: [vue]
+tags: vue
+categories: frontend
 ---
 
 ## Vue

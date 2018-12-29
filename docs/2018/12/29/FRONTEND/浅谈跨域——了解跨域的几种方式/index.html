@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            浅谈跨域--了解跨域的几种方式 | 
+        
+        DIST.XDATA Blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/XDATA.Blog/img/favicon.png">
+    <link rel="icon" href="/XDATA.Blog/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="">
+    <meta name="keywords" content="Web XDATA,跨域">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/XDATA.Blog/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/XDATA.Blog/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/XDATA.Blog/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/XDATA.Blog/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","/XDATA.Blog/css/material-icons.css?pqhB/Rd/ab0H2+kZp0RDmw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","/XDATA.Blog/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="DIST.XDATA Blog">
+    <meta name="msapplication-starturl" content="https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/12/29/FRONTEND/浅谈跨域——了解跨域的几种方式/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="DIST.XDATA Blog">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/XDATA.Blog/img/favicon.png">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/12/29/FRONTEND/浅谈跨域——了解跨域的几种方式/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="浅谈跨域--了解跨域的几种方式 | DIST.XDATA Blog">
+    <meta property="og:image" content="/XDATA.Blog/img/favicon.png">
+    <meta property="og:description" content="">
+    <meta property="og:article:tag" content="跨域"> 
+
+    
+        <meta property="article:published_time" content="Sat Dec 29 2018 09:42:07 GMT+0800">
+        <meta property="article:modified_time" content="Sat Dec 29 2018 10:54:23 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/12/29/FRONTEND/浅谈跨域——了解跨域的几种方式/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/12/29/FRONTEND/浅谈跨域——了解跨域的几种方式/index.html",
+    "headline": "浅谈跨域--了解跨域的几种方式",
+    "datePublished": "Sat Dec 29 2018 09:42:07 GMT+0800",
+    "dateModified": "Sat Dec 29 2018 10:54:23 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "XDATA",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "DIST.XDATA Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",跨域Web XDATA",
+    "description": "",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言部分"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言部分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、跨域是什么？"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">一、跨域是什么？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3、总结"><span class="post-toc-number">1.1.0.1.</span> <span class="post-toc-text">3、总结</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/XDATA.Blog/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                浅谈跨域--了解跨域的几种方式
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/XDATA.Blog/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>XDATA</strong>
+        <span>12月 29, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://dist-xdata.github.io/XDATA.Blog/2018/12/29/FRONTEND/浅谈跨域——了解跨域的几种方式/">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/XDATA.Blog/tags/跨域/">跨域</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=浅谈跨域--了解跨域的几种方式&url=https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/12/29/FRONTEND/浅谈跨域——了解跨域的几种方式/index.html&pic=https://dist-xdata.github.io/XDATA.Blog/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=DIST.XDATA Blog&title=浅谈跨域--了解跨域的几种方式&summary=&pics=https://dist-xdata.github.io/XDATA.Blog/img/favicon.png&url=https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/12/29/FRONTEND/浅谈跨域——了解跨域的几种方式/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="前言部分"><a href="#前言部分" class="headerlink" title="前言部分"></a>前言部分</h1><h2 id="一、跨域是什么？"><a href="#一、跨域是什么？" class="headerlink" title="一、跨域是什么？"></a>一、跨域是什么？</h2><p>跨域是指一个域下的文档或脚本试图去请求另一个域下的资源（广义的）。</p>
+<p>广义的跨域场景有以下几种：</p>
+<ul>
+<li><p>资源的跳转：A链接、重定向、表单提交；</p>
+</li>
+<li><p>资源嵌入：<link>、<script>、<img>、<iframe> 等DOM标签，还有样式中 background:url()、@font-face()等文件外链；</p>
+</li>
+<li><p>脚本请求： js发起的ajax请求、dom和js对象的跨域操作等；</p>
+</li>
+</ul>
+<p>我们通常所说的跨域是狭义的，是由浏览器同源策略限制的一类请求场景。</p>
+<h2 id="二、同源策略是什么？"><a href="#二、同源策略是什么？" class="headerlink" title="二、同源策略是什么？"></a>二、同源策略是什么？</h2><p>同源策略/SOP（Same origin policy）是一种约定，由 Netscape 公司 1995 年引入浏览器，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS（跨站脚本攻击）、CSFR（Cross-site request forgery 跨站请求伪造）等攻击。所谓同源是指 ”协议+域名+端口” 三者相同，即便两个不同的域名指向同一个 ip 地址，也非同源。</p>
+<p>跨域的安全限制，主要是针对浏览器端来说的，服务器端是不存在跨域安全限制的。</p>
+<p>浏览器的同源策略限制从一个源加载的文档或脚本与来自另一个源的资源进行交互。如果协议、端口和主机对于两个页面是相同的，则两个页面具有相同的源，否则就是不同源的。如果要在js里发起跨域请求，则要进行一些特殊处理了。或者，你可以把请求发到自己的服务端，再通过后台代码发起请求，再将数据返回前端。</p>
+<p>总结来说同源策略限制以下几种行为：</p>
+<ul>
+<li>Cookie、LocalStorage 和 IndexDB（也是一种前端缓存） 无法读取；</li>
+<li>DOM 和 Js对象无法获得；</li>
+<li>AJAX 请求不能发送；</li>
+</ul>
+<h2 id="三、常见的跨域场景有哪些？"><a href="#三、常见的跨域场景有哪些？" class="headerlink" title="三、常见的跨域场景有哪些？"></a>三、常见的跨域场景有哪些？</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">URL</th>
+<th style="text-align:left">说明</th>
+<th style="text-align:left">是否允许通信</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="http://www.demo.com/a.js">http://www.demo.com/a.js</a> <br><a href="http://www.demo.com/b.js">http://www.demo.com/b.js</a><br><a href="http://www.demo.com/lab/c.js">http://www.demo.com/lab/c.js</a></td>
+<td style="text-align:left">同一域名，不同文件或路径</td>
+<td style="text-align:left">允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.demo.com:8000/a.js">http://www.demo.com:8000/a.js</a> <br/><a href="http://www.demo.com/b.js">http://www.demo.com/b.js</a></td>
+<td style="text-align:left">同一域名，不同端口</td>
+<td style="text-align:left">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.demo.com/a.js">http://www.demo.com/a.js</a> <br/><a href="https://www.demo.com/b.js">https://www.demo.com/b.js</a></td>
+<td style="text-align:left">同一域名，不同协议</td>
+<td style="text-align:left">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.demo.com/a.js">http://www.demo.com/a.js</a> <br/><a href="http://127.0.0.1/b.js">http://127.0.0.1/b.js</a></td>
+<td style="text-align:left">域名和域名对应相同ip</td>
+<td style="text-align:left">不允许</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="http://www.demo.com/a.js">http://www.demo.com/a.js</a> <br/><a href="http://x.demo.com/b.js">http://x.demo.com/b.js</a></td>
+</tr>
+</tbody>
+</table>
+<p><a href="http://demo.com/c.js">http://demo.com/c.js</a> | 主域相同，子域不同       | 不允许       |</p>
+<h4 id="了解更多："><a href="#了解更多：" class="headerlink" title="了解更多："></a>了解更多：</h4><ul>
+<li><p>以上表格中第四个 “域名和域名对应相同IP” 不允许通信，虽然对应的IP地址是相同，但是也是不同的域名，这种也是判定为跨域的。我遇到的示例：做微信公众号的测试号配置时，需要在测试号的 <strong>体验接口权限表</strong> <strong>- 网页服务 - 网页帐号 - 网页授权获取用户基本信息 </strong>中配置 <strong>授权回调页面域名</strong>，这里配置的域名需要和提供公众号访问的域名保持一致，我理解的也就是保证非跨域情况配置。经过我多次踩坑，发现以下两种情况域名配置微信是无法进行授权回调的：</p>
+<ol>
+<li>公司内网 IP 地址，经过外网映射之后形成的 IP 地址；</li>
+<li>IP 地址对应的一个域名；</li>
+<li>IP 地址相同，对应端口号未配置；</li>
+</ol>
+<p>第3条情况对应表格第二个“同一域名，不同端口”不允许访问，需要将端口严格保持一致。</p>
+<p>第1、2 条两种情况其实和表格中第四个的情况都是一回事，是属于 “域名和域名对应相同 IP” 的情况。后来我使用了内网的IP去设置，使授权回调IP和配置在公众号菜单访问的地址链接中的IP保持一致，完成了授权。</p>
+</li>
+</ul>
+<p>##四、解决方案</p>
+<ul>
+<li><p>通过 jsonp 跨域</p>
+</li>
+<li><p>document.domain + iframe 跨域</p>
+</li>
+<li><p>location.hash + iframe</p>
+</li>
+<li><p>window.name + iframe 跨域</p>
+</li>
+<li><p>postMessage 跨域</p>
+</li>
+<li><p>跨域资源共享（CORS）</p>
+</li>
+<li><p>nginx 代理跨域</p>
+</li>
+<li><p>nodejs 中间件代理跨域</p>
+</li>
+<li><p>WebSocket 协议跨域</p>
+</li>
+</ul>
+<p>#跨域的几种解决方案</p>
+<p>##一、jsonp 方式<br>jsonp (json with padding) 是 json 的一种“使用模式”，是为了解决跨域问题而产生的解决方案。</p>
+<p>####1、jsonp 产生思路：</p>
+<ol>
+<li>AJAX 直接请求普通文件存在跨域无权限访问的问题, 尽管是静态页面；</li>
+<li>我们在调用 js 文件的时候又不受跨域影响, 比如引入 jquery 框架的时候（通过<script>标签引入）；</li>
+<li>凡是拥有 src 这个属性的标签都可以跨域例如 <script> <img> <iframe>;</li>
+<li>如果想通过<strong>纯web端</strong>跨域访问数据只有一种可能,那就是把远程服务器上的数据装进js格式的文件里；</li>
+<li>json 是一个轻量级的数据格式,还被 js 原生支持；</li>
+<li>为了便于客户端使用数据，逐渐形成了一种非正式传输协议，人们把它称作<strong>JSONP</strong>，该协议的一个要点就是允许用户传递一个callback 参数给服务端；</li>
+</ol>
+<p>####2、举例：<br><strong>以下是使用jQuery的jsonp发起跨域请求的例子描述，并总结。为了将过程描述清楚，内容过长，请谅解。</strong></p>
+<ul>
+<li><p>我们先来看一看模拟静态文件访问跨域情况：<br>只前端自己写一写代码，在不同端口形成的跨域情况下进行模拟；<br>MacBook 的本地服务端口配置我将会在后续给出。<br>​    1. 准备环境<br>​      Macbook users 路径下的站点，用自带Apache 配置一个 <em>8001 端口，Apache默认端口 </em>80 (/Library/WebServer/Document) 端口。端口不一样，构成跨域条件。</p>
+<pre><code>2. 开始模拟，使用 &lt;script&gt; 标签实现跨域访问
+</code></pre><ul>
+<li><p>测试文件准备</p>
+<p>端口为 *8001<br>站点目录：<br><img src="https://upload-images.jianshu.io/upload_images/3402395-4c033c933589bb8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8001站点目录.png"><br>代码如下, 文件名称写在代码顶部：</p>
+<pre><code class="js">&lt;!--requestTest.html--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;title&gt;跨域测试&lt;/title&gt;
+&lt;script src=&quot;http://libs.baidu.com/jquery/2.1.4/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+// /* 
+// 演示端口不同引起的跨域
+$(document).ready(function () {
+ $(&quot;#btn&quot;).click(function () {
+   $.ajax({
+     // url: &#39;http://localhost:8001/student&#39;, // 默认的 *8001 端口站点, 数据所在位置，跨域条件达成
+     // url: &#39;http://localhost:8080/message&#39;, // 自己配置的 users 下的 *8080 端口站点，数据所在位置，非跨域
+     type: &#39;GET&#39;,
+     success: function (data) {
+       $(text).val(JSON.stringify(data))
+     }
+   })
+ })
+})
+// */
+var message = function(data) {
+ console.log(&#39;执行 message 方法.返回数据为：&#39;, data)
+ alert(data[1].title)
+}
+&lt;/script&gt;
+&lt;!--使用 jsonp 实现跨域请求，用 js 包裹数据，可以访问。（这种情况更适用于前端的处理）--&gt;
+&lt;!--经测试，在未拼接 callback 的情况下，浏览器执行完这俩 js 文件，自动匹配了 message 方法。效果相同--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://localhost:8080/message?callback=message&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;跨域获取数据&quot;&gt;
+&lt;textarea id=&quot;text&quot; style=&quot;width: 400px; height: 100px;&quot;&gt;&lt;/textarea&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="json">/**
+ * student.json
+*/
+[{
+  &quot;age&quot;: 22,
+  &quot;birthday&quot;: &quot;2018-1-10 12:12&quot;,
+  &quot;id&quot;: 1,
+  &quot;major&quot;: &quot;信息管理&quot;,
+  &quot;name&quot;: &quot;Damon&quot;,
+  &quot;status&quot;: true
+}, {
+  &quot;age&quot;: 23,
+  &quot;birthday&quot;: &quot;2018-1-10 12:12&quot;,
+  &quot;id&quot;: 2,
+  &quot;major&quot;: &quot;软件工程&quot;,
+  &quot;name&quot;: &quot;John&quot;,
+  &quot;status&quot;: true
+}, {
+  &quot;age&quot;: 24,
+  &quot;birthday&quot;: &quot;2018-1-10 12:12&quot;,
+  &quot;id&quot;: 3,
+  &quot;major&quot;: &quot;计算机科学与技术&quot;,
+  &quot;name&quot;: &quot;Sonia&quot;,
+  &quot;status&quot;: true
+}, {
+  &quot;age&quot;: 22,
+  &quot;birthday&quot;: &quot;2018-1-10 12:12&quot;,
+  &quot;id&quot;: 4,
+  &quot;major&quot;: &quot;计算机科学与技术&quot;,
+  &quot;name&quot;: &quot;Mary&quot;,
+  &quot;status&quot;: true
+}]
+</code></pre>
+<p>端口为8080<br>站点目录：<br><img src="https://upload-images.jianshu.io/upload_images/3402395-8e02b0706c45b55f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8080站点目录.png"><br>代码如下：</p>
+<pre><code class="json">/**
+ * message.js
+ */
+console.log(&#39;服务器端执行前端传来的 message 方法。并携带参数返回。&#39;)
+message([
+  {&quot;id&quot;:&quot;1&quot;, &quot;title&quot;:&quot;上海新闻联播，12岁的小王竟然比年仅六岁的小李大6岁！&quot;},
+  {&quot;id&quot;:&quot;2&quot;, &quot;title&quot;:&quot;楼市告别富得流油 专家:房价下跌是大概率事件&quot;},
+  {&quot;id&quot;:&quot;3&quot;, &quot;title&quot;:&quot;股市暴跌，双十一战绩赫然，这究竟是什么鬼迷了心窍？！&quot;},
+  {&quot;id&quot;:&quot;4&quot;, &quot;title&quot;:&quot;没有运气，不要玩A股，你以为的谷底，只是下一个高地！&quot;},
+  {&quot;id&quot;:&quot;5&quot;, &quot;title&quot;:&quot;美丽新世界，啦啦啦啦啦~&quot;},
+  {&quot;id&quot;:&quot;6&quot;, &quot;title&quot;:&quot;国际要闻：听说昨天特朗普因为下个小雨没去开会！&quot;},
+  {&quot;id&quot;:&quot;7&quot;, &quot;title&quot;:&quot;易烊千玺太帅，阿姨、妈妈、女友、姐姐组成的几千万粉丝高呼请他停止散发魅力！&quot;},
+  {&quot;id&quot;:&quot;8&quot;, &quot;title&quot;:&quot;谢耳朵和艾米结婚了，好感动！&quot;},
+  {&quot;id&quot;:&quot;9&quot;, &quot;title&quot;:&quot;如果明天不下雨，竟然也不一定看到太阳！&quot;},
+  {&quot;id&quot;:&quot;10&quot;, &quot;title&quot;:&quot;没有新闻了。&quot;}
+]);
+</code></pre>
+<ul>
+<li>演示<br>在8001端口下的 requestTest.html 文件中，访问本端口映射的文件中的student文件，并展示在页面中，可正常访问到，结果如下:<br><img src="https://upload-images.jianshu.io/upload_images/3402395-6c5b8cf775dae058.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8001_student.png"></li>
+</ul>
+<p>在8001端口下 requestTest.html 文件中，访问 8080端口下的文件 message.js:</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3402395-c8cddd571a087ba8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8001文件请求8080中message.png"></p>
+<p>该请求报错，提示跨域不被允许：<br><img src="https://upload-images.jianshu.io/upload_images/3402395-31fa1b37fcfac340.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8001访问8080message报错信息.png"></p>
+<p>在8001端口下 requestTest.html 文件中，通过 <script> 标签 包裹message.js 的请求: </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3402395-c21616435978c5ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8001通过script标签访问8080的message代码.png"></p>
+<p>可以看到跨域报错信息不见了，可以正常访问到数据：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3402395-d262abcd2107a579.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="8001 script方式跨域请求访问8080message运行结果.png"></p>
+<p>总结：能够正常访问数据，script 标签可以得到其他来源的数据，这也是jsonp的理论依据。缺点：只能进行get 请求，无法访问服务器的响应文本（单向请求）。</p>
+<ul>
+<li><p>现在来看jQuery 的 jsonp 方式跨域请求，结合后台服务器进行 jsonp 请求：<br>这部分内容是后台小伙伴帮忙完成的，这里也非常感谢不辞劳苦，不厌其烦替我解答还帮我写demo的后台小伙伴！<br>服务端代码如下：<br><code>`</code>java<br>protected final static String CHARSET = “;charset=UTF-8”;</p>
+<p>  @RequestMapping(value = “/rest/public/weChat/subscription/queryAuthTaskStatus” ,method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE + CHARSET)<br>  @ResponseBody<br>  public void queryTaskStatus(HttpServletRequest request, PrintWriter out, HttpServletResponse response)throws ServletException, IOException {</p>
+</li>
+</ul>
+<pre><code>    List&lt;Student&gt; studentList = new ArrayList();
+    Student student = new Student();
+    student.setName(&quot;Zhangshan&quot;);
+    student.setAge(&quot;23&quot;);
+    student.setMajor(&quot;前端html&quot;);
+    student.setStatus(true);
+    studentList.add(student);
+    Student student2 = new Student();
+    student2.setName(&quot;list&quot;);
+    student2.setAge(&quot;20&quot;);
+    student2.setMajor(&quot;java开发&quot;);
+    student2.setStatus(true);
+    studentList.add(student2);
+    Student student3 = new Student();
+    student3.setName(&quot;李明&quot;);
+    student3.setAge(&quot;18&quot;);
+    student3.setMajor(&quot;数据部门&quot;);
+    student3.setStatus(false);
+    studentList.add(student3);
+
+    JSONArray jsonArray = JSONArray.fromObject(studentList);
+    String result = jsonArray.toString();
+
+ //前端传过来的回调函数名称
+  String callback = request.getParameter(&quot;callback&quot;);
+
+
+ //前端传过来的回调函数名称
+    result = callback + &quot;(&quot; +result+&quot;)&quot;;
+    response.getWriter().write(result);
+    //out.write(result);
+
+    //out.flush();
+    //out.close();
+}
+</code></pre><p>}</p>
+<pre><code>我们首先看一下采用ajax 普通方式进行请求， js 代码如下：
+```js
+$ajax({
+    url: &quot;http://localhost:8082/SSM2/rest/public/weChat/subscription/query/queryAuthTaskStatus&quot;,
+    type: &quot;get&quot;,
+    datatype: &quot;json&quot;, // 指定服务器返回的数据类型
+    success: function(data) {
+        alert(asd);
+        // var asd = JSON.stringify(data);
+    }
+});
+</code></pre><p>普通方式请求提示跨域无法访问，结果如图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3402395-4940ad4217c52034.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="jQuery普通方式请求服务器数据.jpg"></p>
+<p>然后我们更改代码，使用ajax jsonp方式请求，如果使用简单的方式，就只需配置 dataType: ‘jsonp’,就可以发起一个跨域请求。jsonp 指定服务器返回的数据类型为 jsonp 格式，可以看到请求的路径自动带了一个callback=xxx，xxx是 jQuery随机生成的一个回调函数名称。<br>服务器端代码不变，js 代码截图如下:</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3402395-a20c6d4e48f56ff6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="jQuery jsonp方式请求数据代码.png"></p>
+<p>可正常访问数据，请求结果如下(示例中json 数据解析出现乱码，暂时忽略):</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3402395-c7af00d5d2dea07d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="jQuery jsonp 方式请求结果截图.jpg"></p>
+<p>以上的例子能简单看到 jsonp 是能够完成跨域请求的，结合前后台的配合，也更好理解怎么使用 jsonp 。</p>
+<ul>
+<li>我们再来简单看下如何指定 jsonp 回调函数：<br>以下的例子和解说我搬运自：<a href="https://www.cnblogs.com/chiangchou/p/jsonp.html，看完醍醐灌顶。">https://www.cnblogs.com/chiangchou/p/jsonp.html，看完醍醐灌顶。</a><br>上代码：<br><code>`</code>js<br>1 &lt;%@ page pageEncoding=”utf-8” contentType=”text/html;charset=UTF-8”  language=”java” %&gt;<br>2 <html><br>3 <head><br>4     <title>跨域测试</title><br>5     <script src="js/jquery-1.7.2.js"></script><br>6     <script><br>7<br>8         function showData (data) {<br>9             console.info(“调用showData”);<br>10<br>11             var result = JSON.stringify(data);<br>12             $(“#text”).val(result);<br>13         }<br>14<br>15         $(document).ready(function () {<br>16<br>17 //            window.showData = function  (data) {<br>18 //                console.info(“调用showData”);<br>19 //<br>20 //                var result = JSON.stringify(data);<br>21 //                $(“#text”).val(result);<br>22 //            }<br>23<br>24             $(“#btn”).click(function () {<br>25<br>26                 $.ajax({<br>27                     url: “<a href="http://localhost:9090/student&quot;">http://localhost:9090/student&quot;</a>,<br>28                     type: “GET”,<br>29                     dataType: “jsonp”,  //指定服务器返回的数据类型<br>30                     jsonpCallback: “showData”,  //指定回调函数名称<br>31                     success: function (data) {<br>32                         console.info(“调用success”);<br>33                     }<br>34                 });<br>35             });<br>36<br>37         });<br>38     </script><br>39 <br>40 <body><br>41     <input id="btn" type="button" value="跨域获取数据"><br>42     <textarea id="text" style="width: 400px; height: 100px;"></textarea><br>43<br>44 </body><br>45 </p></li>
+</ul>
+<pre><code>回调函数可以写到&lt;script&gt;里（默认属于window对象），或者指明写到window对象里，看jQuery源码，可以看到jQuery调用回调函数时，是调用的window.callback。代码如上，看调用结果发现，请求时带的参数是callback=showData,然后再调用了success，后台先将参数放进回调函数里，本质上前端是插入了一个脚本，放入数据，就等于执行了那个回调方法，再进行网络请求的响应处理，所以回调函数先拿到了数据，success再走。success是返回成功以后必定会调的函数。
+
+如果想要更改 callback 这个参数的名称，参考以下代码第23行。
+```js
+ 1 &lt;%@ page pageEncoding=&quot;utf-8&quot; contentType=&quot;text/html;charset=UTF-8&quot;  language=&quot;java&quot; %&gt;
+ 2 &lt;html&gt;
+ 3 &lt;head&gt;
+ 4     &lt;title&gt;跨域测试&lt;/title&gt;
+ 5     &lt;script src=&quot;js/jquery-1.7.2.js&quot;&gt;&lt;/script&gt;
+ 6     &lt;script&gt;
+ 7 
+ 8         function showData (data) {
+ 9             console.info(&quot;调用showData&quot;);
+10 
+11             var result = JSON.stringify(data);
+12             $(&quot;#text&quot;).val(result);
+13         }
+14 
+15         $(document).ready(function () {
+16 
+17             $(&quot;#btn&quot;).click(function () {
+18 
+19                 $.ajax({
+20                     url: &quot;http://localhost:9090/student&quot;,
+21                     type: &quot;GET&quot;,
+22                     dataType: &quot;jsonp&quot;,  //指定服务器返回的数据类型
+23                     jsonp: &quot;theFunction&quot;,   //指定参数名称，前端调用时接口后面要指定的参数名(必须，作为后台参数，执行该回调方法，便会把数据带回)
+24                     jsonpCallback: &quot;showData&quot;,  //指定回调函数名称，本地接收数据的函数。(必须)
+25                     success: function (data) {
+26                         console.info(&quot;调用success&quot;);
+27                     }
+28                 });
+29             });
+30 
+31         });
+32     &lt;/script&gt;
+33 &lt;/head&gt;
+34 &lt;body&gt;
+35     &lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;跨域获取数据&quot; /&gt;
+36     &lt;textarea id=&quot;text&quot; style=&quot;width: 400px; height: 100px;&quot;&gt;&lt;/textarea&gt;
+37 
+38 &lt;/body&gt;
+39 &lt;/html&gt;
+</code></pre><p>如此以来后台也要跟着改变，找到我前面的例子<strong>jQuery 的 jsonp 方式跨域请求</strong>中后台代码，找到下图对应位置并作出修改：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3402395-523d94f4102f5dae.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="后台修改代码提示"></p>
+<p>把getParameter(“callback”)里的callback改成前面23行代码配置的函数名“theFunction”即可。</p>
+<p>经测试，无法进行POST请求，要测试就将前面的请求方式更改成POST即可，结果如下：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3402395-b0cfcf24a1b795f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="jsonp进行POST请求报错信息"></p>
+<p>jsonp 本质就是执行了JavaScript。是通过 script 标签的开放策略，使网页可以获取其他来源的数据，用 jsonp 获取的数据也不是真正的 json,而是任意的JavaScript, 用JavaScript解释器，而不是用json解析器解析，ajax 只是对脚本请求做了封装。所以，ajax 的 jsonp 请求也是不支持 POST 的。在谷歌浏览器Chrome中查看 jsonp 发送的请求都是js类型，而不是 xhr【1，文末注解】 ：【图片来源自水印地址】</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/3402395-dee43296481ff528.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="请求类型示意图"></p>
+<h4 id="3、总结"><a href="#3、总结" class="headerlink" title="3、总结"></a>3、总结</h4><p>综上一大堆解释和示例，我们可以对 jsonp 原理作如下简单描述：<br>以下例子是较早学习跨域看到的描述，觉得写得很好，当时只记录了这个片段，未保存出处，若有人看到过望在评论指出，我会补上。<strong>也在此对作者表达歉意，并检讨以后摘录要记下出处</strong>。</p>
+<p>首先我们假设a网页调用b网站的服务</p>
+<ol>
+<li>a 网站需要准备一个方法，例如 callback(args);</li>
+<li>a 网站在页面中插入一个 <script> 标签，src 指向 b 网站的地址，并带上callback  作为参数;</li>
+<li>b网站接受请求处理后，把结果和回调方法的名字组成一个字符串返回，例如callback(‘data’);</li>
+<li>由于是 script 标签，b 网站返回的字符串会被当成js解析执行，相当于调用到了 callback 方法;</li>
+<li>主要利用了 script（img, iframe等有src属性的标签）可以跨站点访问的特性，且只能用 GET 请求，需要服务端做点配合，并且需要信任服务器(安全考虑)。jquery 的 jsonp ajax 只是封装了这个过程，让你看上去和普通 ajax 没什么区别，其实却一点关系都没有。</li>
+</ol>
+<p>友情提示：axios 不支持 jsonp ,要用的话，可以装插件或者使用原生实现。</p>
+<p>##二、跨域资源共享</p>
+<p><strong>跨域资源共享（CORS）是一种网络浏览器的技术规范，它为web服务器定义了一种方式，允许网页从不同的域访问资源。CORS就是为了让AJAX可以实现可控的跨域访问而生的。</strong></p>
+<h4 id="1、内部机制讲解"><a href="#1、内部机制讲解" class="headerlink" title="1、内部机制讲解"></a>1、内部机制讲解</h4><h6 id="1-简介"><a href="#1-简介" class="headerlink" title="1) 简介"></a>1) 简介</h6><p>通过在HTTP Header中加入扩展字段，服务器在相应网页头部加入字段表示允许访问的domain和HTTP method，客户端检查自己的域是否在允许列表中，决定是否处理响应。</p>
+<p>CORS 需要浏览器和服务器同时支持。目前所有浏览器都支持该功能，IE浏览器不能低于IE10。</p>
+<p>整个 CORS 通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS 通信与同源的 AJAX 通信没有差别，代码完全一样。浏览器一旦发现 AJAX 请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。</p>
+<p>因此，实现CORS通信的关键是服务器。只要服务器实现了CORS接口，就可以跨源通信。</p>
+<h6 id="2-两种请求"><a href="#2-两种请求" class="headerlink" title="2) 两种请求"></a>2) 两种请求</h6><p>浏览器将 cors 请求分为两种请求：简单请求 和 非简单请求。简单请求就是使用设定的请求方式请求数据<br>而非简单请求则是在使用设定的请求方式请求数据之前,先发送一个OPTIONS请求,看服务端是否允许客户端发送非简单请求.只有”预检”通过后才会再发送一次请求用于数据传输。（例子，get、put 请求方式的区别）。</p>
+<p>只要同时满足以下两大条件，就属于简单请求。</p>
+<pre><code class="js">（1) 请求方法是以下三种方法之一：
+    HEAD
+    GET
+    POST
+（2）HTTP的头信息不超出以下几种字段：
+    Accept
+    Accept-Language
+    Content-Language
+    Last-Event-ID
+    Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain
+</code></pre>
+<p>凡是不同时满足上面两个条件，就属于非简单请求。</p>
+<p>浏览器对这两种请求的处理，是不一样的。</p>
+<h6 id="3-简单请求："><a href="#3-简单请求：" class="headerlink" title="3) 简单请求："></a>3) 简单请求：</h6><p>浏览器对于简单的请求，直接发起 cors 请求。具体的说，就是在请求头加上 Origin 字段。比如截取规划小智请求的报头信息：（这个请求不是真的简单请求，只是找了实例为了方便查看结果关键的头信息）</p>
+<pre><code class="http">Accept:*/*
+Accept-Encoding:gzip, deflate, br
+Accept-Language:zh-CN,zh;q=0.8
+Cache-Control:no-cache
+Connection:keep-alive
+Content-Length:630
+content-type:application/json
+Host:server.guihuaxiaozhi.com
+Origin:http://127.0.0.1:33284
+Pragma:no-cache
+Referer:https://servicewechat.com/wx3e0ec267606ff974/devtools/page-frame.html
+User-Agent:Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 wechatdevtools/1.02.1812180 MicroMessenger/6.7.3 Language/zh_CN webview/ token/9c8817cf1182bd6804aab2b7ad0a756a
+</code></pre>
+<p>上面的头信息中，<code>Origin</code>字段用来说明，本次请求来自哪个源（协议 + 域名 + 端口）。服务器根据这个值，决定是否同意这次请求。</p>
+<p>如果<code>Origin</code>指定的源，不在许可范围内，服务器会返回一个正常的HTTP回应。浏览器发现，这个回应的头信息没有包含<code>Access-Control-Allow-Origin</code>字段（详见下文），就知道出错了，从而抛出一个错误，被<code>XMLHttpRequest</code>的<code>onerror</code>回调函数捕获。注意，这种错误无法通过状态码识别，因为HTTP回应的状态码有可能是200。（ps: 我理解具体就是请求的回应状态为200，但是会在控制台提示错误信息，access-origin-check）</p>
+<p>如果<code>Origin</code>指定的域名在许可范围内，服务器返回的响应，会多出几个头信息字段。</p>
+<pre><code class="http">Access-Control-Allow-Credentials:true
+Access-Control-Allow-Origin:http://127.0.0.1:33284
+Access-Control-Expose-Headers:Set-Cookie
+Connection:keep-alive
+Content-Type:application/json;charset=UTF-8
+Date:Thu, 27 Dec 2018 02:24:44 GMT
+Server:nginx/1.10.2
+Set-Cookie:SESSION=243e9e07-c7f9-4cb5-b896-e8807ecbb695; Path=/bdp-webconsumer/; HttpOnly
+Transfer-Encoding:chunked
+Vary:Origin
+</code></pre>
+<p>上面的头信息之中，有三个与CORS请求相关的字段，都以<code>Access-Control-</code>开头。注意这几个是响应头里的，由服务器端设置。</p>
+<ul>
+<li><p><strong>Access-Control-Allow-Origin</strong> </p>
+<p>该字段是必须的。它的值要么是请求时<code>Origin</code>字段的值，指定域名的请求; 要么是一个<code>*</code>，表示接受任意域名的请求。</p>
+</li>
+<li><p><strong>Access-Control-Allow-Credentials</strong></p>
+<p>该字段可选。它的值是一个布尔值，表示是否允许发送 Cookie。默认情况下，Cookie 不包括在CORS请求之中。设为<code>true</code>，即表示服务器明确许可，Cookie可以包含在请求中，一起发给服务器。这个值也只能设为<code>true</code>，如果服务器不要浏览器发送Cookie，删除该字段即可。</p>
+</li>
+<li><p><strong>Access-Control-Expose-Headers</strong></p>
+<p>该字段可选。CORS请求时，<code>XMLHttpRequest</code>对象的<code>getResponseHeader()</code>方法只能拿到6个基本字段：<code>Cache-Control</code>、<code>Content-Language</code>、<code>Content-Type</code>、<code>Expires</code>、<code>Last-Modified</code>、<code>Pragma</code>。如果想拿到其他字段，就必须在<code>Access-Control-Expose-Headers</code>里面指定。上面的例子指定，<code>getResponseHeader(&#39;Set-Cookie&#39;)</code>可以返回<code>Set-Cookie</code>(服务器为浏览器设置cookie)字段的值。</p>
+</li>
+</ul>
+<p>上面说到，CORS请求默认不发送Cookie和HTTP认证信息。如果要把Cookie发到服务器，一方面要服务器同意，指定<code>Access-Control-Allow-Credentials</code>字段。另一方面，需要前端，在请求的时候设置<code>withCredentials</code>属性，才能让浏览器处理携带 cookie 发起请求。</p>
+<p>注意：</p>
+<p>如果要发送Cookie，<code>Access-Control-Allow-Origin</code>就不能设为星号，必须指定明确的、与请求网页一致的域名。同时，Cookie依然遵循同源政策，只有用服务器域名设置的Cookie才会上传，其他域名的Cookie并不会上传，且（跨源）原网页代码中的<code>document.cookie</code>也无法读取服务器域名下的Cookie。</p>
+<h6 id="4）非简单请求"><a href="#4）非简单请求" class="headerlink" title="4）非简单请求"></a>4）非简单请求</h6><ul>
+<li><p>预检请求</p>
+<p>非简单请求是那种对服务器有特殊要求的请求，比如请求方法是<code>PUT</code>或<code>DELETE</code>，或者<code>Content-Type</code>字段的类型是<code>application/json</code>。</p>
+<p>非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求（preflight）。</p>
+<p>浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的<code>XMLHttpRequest</code>请求，否则就报错。</p>
+<p>下面是一段浏览器的JavaScript脚本。</p>
+<pre><code class="js">
+var url = &#39;http://api.alice.com/cors&#39;;
+var xhr = new XMLHttpRequest();
+xhr.open(&#39;PUT&#39;, url, true);
+xhr.setRequestHeader(&#39;X-Custom-Header&#39;, &#39;value&#39;);
+xhr.send();
+</code></pre>
+<p>上面代码中，HTTP请求的方法是<code>PUT</code>，并且发送一个自定义头信息<code>X-Custom-Header</code>。</p>
+<p>浏览器发现，这是一个非简单请求，就自动发出一个”预检”请求，要求服务器确认可以这样请求。下面是这个”预检”请求的HTTP头信息。</p>
+<pre><code>OPTIONS /cors HTTP/1.1
+Origin: http://api.bob.com
+Access-Control-Request-Method: PUT
+Access-Control-Request-Headers: X-Custom-Header
+Host: api.alice.com
+Accept-Language: en-US
+Connection: keep-alive
+User-Agent: Mozilla/5.0...
+</code></pre><p>“预检”请求用的请求方法是<code>OPTIONS</code>，表示这个请求是用来询问的。头信息里面，关键字段是<code>Origin</code>，表示请求来自哪个源。</p>
+<p>除了<code>Origin</code>字段，”预检”请求的头信息包括两个特殊字段。</p>
+<ul>
+<li><strong>Access-Control-Request-Method</strong></li>
+</ul>
+<p>该字段是必须的，用来列出浏览器的CORS请求会用到哪些HTTP方法，上例是<code>PUT</code>。</p>
+<ul>
+<li><strong>Access-Control-Request-Headers</strong></li>
+</ul>
+<p>该字段是一个逗号分隔的字符串，指定浏览器CORS请求会额外发送的头信息字段，上例是<code>X-Custom-Header</code>。</p>
+</li>
+<li><p>预检请求的回应(仍以上面的例子来说明)</p>
+<p>服务器收到”预检”请求以后，检查了<code>Origin</code>、<code>Access-Control-Request-Method</code>和<code>Access-Control-Request-Headers</code>字段以后，确认允许跨源请求，就可以做出回应。</p>
+<pre><code class="http">HTTP/1.1 200 OK
+Date: Mon, 01 Dec 2008 01:15:39 GMT
+Server: Apache/2.0.61 (Unix)
+Access-Control-Allow-Origin: http://api.bob.com
+Access-Control-Allow-Methods: GET, POST, PUT
+Access-Control-Allow-Headers: X-Custom-Header
+Content-Type: text/html; charset=utf-8
+Content-Encoding: gzip
+Content-Length: 0
+Keep-Alive: timeout=2, max=100
+Connection: Keep-Alive
+Content-Type: text/plain
+</code></pre>
+<p>上面的HTTP回应中，关键的是<code>Access-Control-Allow-Origin</code>字段，表示<code>http://api.bob.com</code>可以请求数据。该字段也可以设为星号(*)，表示同意任意跨源请求。注意的点在简单请求里有提到，这里类似。</p>
+<pre><code class="http">Access-Control-Allow-Origin: *
+</code></pre>
+<p>如果浏览器否定了”预检”请求，会返回一个正常的HTTP回应，但是没有任何CORS相关的头信息字段。这时，浏览器就会认定，服务器不同意预检请求，因此触发一个错误，被<code>XMLHttpRequest</code>对象的<code>onerror</code>回调函数捕获。控制台会打印出如下的报错信息。</p>
+<pre><code class="js">
+XMLHttpRequest cannot load http://api.alice.com.
+Origin http://api.bob.com is not allowed by Access-Control-Allow-Origin.
+</code></pre>
+<p>服务器回应的其他CORS相关字段如下。</p>
+<pre><code class="http">Access-Control-Allow-Methods: GET, POST, PUT
+Access-Control-Allow-Headers: X-Custom-Header
+Access-Control-Allow-Credentials: true
+Access-Control-Max-Age: 1728000
+</code></pre>
+<ul>
+<li><strong>Access-Control-Allow-Methods</strong></li>
+</ul>
+<p>该字段必需，它的值是逗号分隔的一个字符串，表明服务器支持的所有跨域请求的方法。注意，返回的是所有支持的方法，而不单是浏览器请求的那个方法。这是为了避免多次”预检”请求。</p>
+<ul>
+<li><strong>Access-Control-Allow-Headers</strong></li>
+</ul>
+<p>如果浏览器请求包括<code>Access-Control-Request-Headers</code>字段，则<code>Access-Control-Allow-Headers</code>字段是必需的。它也是一个逗号分隔的字符串，表明服务器支持的所有头信息字段，不限于浏览器在”预检”中请求的字段。</p>
+<ul>
+<li><strong>Access-Control-Allow-Credentials</strong></li>
+</ul>
+<p>该字段与简单请求时的含义相同。</p>
+<ul>
+<li><strong>Access-Control-Max-Age</strong></li>
+</ul>
+<p>该字段可选，用来指定本次预检请求的有效期，单位为秒。上面结果中，有效期是20天（1728000秒），即允许缓存该条回应1728000秒（即20天），在此期间，不用发出另一条预检请求。</p>
+</li>
+<li><p>浏览器的正常请求和回应</p>
+<p>一旦服务器通过了”预检”请求，以后每次浏览器正常的CORS请求，就都跟简单请求一样，会有一个<code>Origin</code>头信息字段。服务器的回应，也都会有一个<code>Access-Control-Allow-Origin</code>头信息字段。</p>
+<p>下面是”预检”请求之后，浏览器的正常CORS请求。</p>
+<blockquote>
+<pre><code class="http">PUT /cors HTTP/1.1
+Origin: http://api.bob.com
+Host: api.alice.com
+X-Custom-Header: value
+Accept-Language: en-US
+Connection: keep-alive
+User-Agent: Mozilla/5.0...
+</code></pre>
+</blockquote>
+<p>上面头信息的<code>Origin</code>字段是浏览器自动添加的。</p>
+<p>下面是服务器正常的回应。</p>
+<blockquote>
+<pre><code class="http">Access-Control-Allow-Origin: http://api.bob.com
+Content-Type: text/html; charset=utf-8
+</code></pre>
+</blockquote>
+<p>上面头信息中，<code>Access-Control-Allow-Origin</code>字段是每次回应都必定包含的。</p>
+</li>
+</ul>
+<p>####2、如何实现 CORS<br>只需要在后台中加上配置来允许跨域请求。如果还需要携带cookie在前端被请求的Response header中加入允许携带配置，就可以实现跨域访问了！</p>
+<p>以下也是后台小伙伴友情提供，这里再次感谢~(<em>^__^</em>) 嘻嘻……<br>下面我们来看一下 Java 的Tomcat 配置 cors:<br>首先需要下载 jar 包cors-filter与java-property-utils：</p>
+<pre><code class="java">&lt;!-- https://mvnrepository.com/artifact/com.thetransactioncompany/cors-filter --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.thetransactioncompany&lt;/groupId&gt;
+    &lt;artifactId&gt;cors-filter&lt;/artifactId&gt;
+    &lt;version&gt;2.5&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- https://mvnrepository.com/artifact/com.thetransactioncompany/java-property-utils --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;com.thetransactioncompany&lt;/groupId&gt;
+    &lt;artifactId&gt;java-property-utils&lt;/artifactId&gt;
+    &lt;version&gt;1.10&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>修改web.xml, 增加以下代码（最好放在其他filter前边）</p>
+<pre><code class="java">&lt;filter&gt;         
+    &lt;filter-name&gt;CORS&lt;/filter-name&gt;  
+    &lt;filter-class&gt;com.thetransactioncompany.cors.CORSFilter&lt;/filter-class&gt;  
+    &lt;init-param&gt;  
+     &lt;param-name&gt;cors.allowOrigin&lt;/param-name&gt;  
+        &lt;param-value&gt;*&lt;/param-value&gt;  
+    &lt;/init-param&gt;  
+    &lt;init-param&gt;  
+     &lt;param-name&gt;cors.supportedMethods&lt;/param-name&gt;  
+        &lt;param-value&gt;GET, POST, HEAD, PUT, DELETE&lt;/param-value&gt;  
+    &lt;/init-param&gt;  
+    &lt;init-param&gt;  
+     &lt;param-name&gt;cors.supportedHeaders&lt;/param-name&gt;  
+        &lt;param-value&gt;Accept, Origin, X-Requested-With, Content-Type, Last-Modified&lt;/param-value&gt;  
+    &lt;/init-param&gt;  
+    &lt;init-param&gt;  
+        &lt;param-name&gt;cors.exposedHeaders&lt;/param-name&gt;  
+        &lt;param-value&gt;Set-Cookie&lt;/param-value&gt;  
+    &lt;/init-param&gt;  
+    &lt;init-param&gt;  
+        &lt;param-name&gt;cors.supportsCredentials&lt;/param-name&gt;  
+        &lt;param-value&gt;true&lt;/param-value&gt;  
+    &lt;/init-param&gt;
+&lt;/filter&gt;  
+
+&lt;filter-mapping&gt;  
+    &lt;filter-name&gt;CORS&lt;/filter-name&gt;  
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;  
+&lt;/filter-mapping&gt;
+</code></pre>
+<p>jQuery请求示例:</p>
+<pre><code class="js">$.ajax(&quot;url&quot;, {
+    type: &quot;POST&quot;,
+    xhrFields: {
+        withCredentials: true,
+        useDefaultXhrHeader: false
+    },
+    data: {
+        type: &quot;test&quot;
+    },
+    dataType: &#39;json&#39;,
+    crossDomain: true,
+    success: function(data, status, xhr) {
+        console.log(data);
+    }
+});
+</code></pre>
+<p>跨域请求默认不会携带 cookie 信息，如果要携带请配置以下信息：</p>
+<pre><code class="js">// 前端设置
+“withCredentials”: true 
+</code></pre>
+<p>Vue 框架 axios 配置：</p>
+<pre><code>axios.defaults.withCredentials = true
+</code></pre><p>如果前端访问成功，则说明后台配置正确，反之，说明后台配置失败。</p>
+<h4 id="3、CORS-与-JSONP-的比较"><a href="#3、CORS-与-JSONP-的比较" class="headerlink" title="3、CORS 与 JSONP  的比较:"></a>3、CORS 与 JSONP  的比较:</h4><ul>
+<li>jsonp只能实现 GET 请求，而cors支持所有类型的http请求；</li>
+<li>使用cors，开发者可以使用XMLHttpRequest发起请求和获得响应，可以有更好的错误处理；</li>
+<li>jsonp 主要被老的浏览器支持，但它们往往不支持cors，而绝大多数现代浏览器都已经支持了cors。</li>
+</ul>
+<h4 id="4、CORS主要应用场景："><a href="#4、CORS主要应用场景：" class="headerlink" title="4、CORS主要应用场景："></a>4、CORS主要应用场景：</h4><ul>
+<li>后台使用 restful API 架构，前后台不在同一服务器，需要用到。</li>
+</ul>
+<p>##三、nginx 反向代理接口跨域<br>有反向代理，那就肯定有正向代理。我们先来简单说说这个正、反向代理是个啥。</p>
+<p>关于代理，生活中代理场景，中介。</p>
+<p>###1、正向代理原理<br>正向代理类似一个跳板机，把浏览器访问过程委托给代理去做，代理访问外部资源。<br><img src="https://upload-images.jianshu.io/upload_images/3402395-ba20a909839d2336.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="正向代理原理示意图"></p>
+<p>举个例子：<br>我是一个用户，我访问不了某网站，但是我能访问一个代理服务器，这个代理服务器能访问那个我不能访问的网站，于是我先连上代理服务器,告诉他我需要那个无法访问网站的内容，代理服务器去取回来,然后返回给我。从目标网站的角度，只在代理服务器来取内容的时候有一次记录，有时候并不知道是用户的请求，也隐藏了用户的资料，这取决于代理告不告诉网站。<br>类似场景比如我们在外网去访问公司内网服务器B，我们先设置VPN，通过VPN将我们的请求转发到内网的A服务器，然后A把请求发到B上，响应内容返回到A，再由A通过VPN返回到我们。<br>工作流程可以描述为：<br>用户设置代理服务器，用户访问url，代理服务器代替用户访问并将网页内容返回。</p>
+<p>###2、反向代理服务器工作原理<br><strong>反向代理（Reverse Proxy）</strong>方式是指后台内部网络服务器委托代理服务器，以代理服务器来接受Internet上的连接请求，然后将请求转发给内部网络上的服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。<br>用户访问的是代理服务器，前端是不知道后台真实地址，只知道代理地址。<br><img src="https://upload-images.jianshu.io/upload_images/3402395-b0d072681e6e1008.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="反向代理原理示意图"></p>
+<p>再举个栗子：<br>我是一个用户，我可以访问某一个网站，网站的数据是来源于我访问不到的内部网络上的内容服务器，内容服务器设置了可以访问自己的代理服务器。于是我向目标内容服务器发起请求，其实我访问的是内容服务器设置的代理服务器，这个代理服务器将我的请求转发到目标内容服务器上，获取到数据后再返回给网站上，我就可以看见了。<br><img src="https://upload-images.jianshu.io/upload_images/3402395-428692e0b82edb8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="反向代理工作流程示意图"><br>工作流程可以描述为：<br>和正向代理相反，由目标内容服务器设置代理服务器，代理转发用户发起的请求，获取数据再返回给用户。</p>
+<p>###3、使用 nginx 反向代理解决跨域<br><em>Nginx</em> (engine x) 是一个高性能的<a href="https://baike.baidu.com/item/HTTP">HTTP</a>和<a href="https://baike.baidu.com/item/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/7793488">反向代理</a>服务，也是一个IMAP/POP3/SMTP服务。</p>
+<p>我们前面提到跨域是浏览器的同源策略导致的，同源策略它是浏览器针对脚本攻击采取的一种安全策略，并不是 HTTP 协议的一部分。所以服务器端调用 HTTP 接口只是使用了 HTTP 协议，是不会执行 js 脚本的，不需要同源策略，也就不会形成跨域问题。<br>我们使用代理（同源）服务器发起请求，再由代理（同源）服务器请求内部服务器。</p>
+<p>我们先来看看怎么来设置反向代理实现跨域请求。</p>
+<ul>
+<li>跨域举例<br>假设有两个网站，A网站部署在：<a href="http://localhost:81">http://localhost:81</a> 即本地ip端口81上；B网站部署在：<a href="http://localhost:82">http://localhost:82</a> 即本地ip端口82上。现在A网站的页面想去访问B网站的信息，这时候浏览器是会报错的，因为形成了跨域。<br>访问代码：<pre><code>&lt;h2&gt;Index&lt;/h2&gt;
+&lt;div id=&quot;show&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+      $(function () {
+          $.get(&quot;http://localhost:82/api/values&quot;, {}, function (result) {
+              $(&quot;#show&quot;).html(result);
+          })
+      })
+</code></pre></li>
+<li><p>nginx 搭建<br>去官网下载 nginx，这个安装例子是Windows系统下的，下完然后安装。解压缩得到目录如下：<br><img src="https://upload-images.jianshu.io/upload_images/3402395-5efc89eede85514f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="nginx安装包解压缩目录"></p>
+</li>
+<li><p>配置 nginx.conf<br>打开目录中的 “conf” 文件夹下的“nginx.conf”。以下为未修改的配置文件片段：</p>
+<pre><code>#服务器的集群
+  upstream  rj.nginx.com {  #服务器集群名字    
+      server    127.0.0.1:8001  weight=1;#服务器配置   weight是权重的意思，权重越大，分配的概率越大。
+      server    127.0.0.1:8002  weight=2;
+  }
+
+  #当前的Nginx的配置
+  server {
+      listen       80; #监听80端口，可以改成其他端口
+      server_name  localhost; # 当前服务的域名
+
+      #charset koi8-r;
+
+      #access_log  logs/host.access.log  main;
+
+      location / {
+          proxy_pass http://rj.nginx.com;
+          proxy_redirect default;
+      }
+</code></pre><p>修改后代码：</p>
+<pre><code>server {
+      listen       80; #监听80端口，可以改成其他端口
+      server_name  localhost; # 当前服务的域名
+
+      #charset koi8-r;
+
+      #access_log  logs/host.access.log  main;
+
+      #这里是单一代理，也可以配置多个，多代理
+      location /apis { #添加访问目录为/apis的代理配置
+          rewrite  ^/apis/(.*)$ /$1 break;
+          proxy_pass   http://localhost:82;
+     }
+#以下配置省略
+</code></pre><p>如果要实现前端跨域携带cookie的则在 location中另外配置：</p>
+<pre><code># 当用webpack-dev-server等中间件代理接口访问nignx时，此时无浏览器参与，故没有同源限制，下面的跨域配置可不启用
+add_header Access-Control-Allow-Origin http://www.domain1.com;  #当前端只跨域不带cookie时，可为*
+add_header Access-Control-Allow-Credentials true;
+</code></pre><p>如果是在浏览器中访问，项目访问地址需要和nginx代理同源，可以在同一个站点或者对nginx实现cors相关配置。<br>修改代码片段解析：</p>
+</li>
+</ul>
+<ol>
+<li>由配置信息可知，我们让nginx监听localhost的80端口，网站A与网站B的访问都是经过localhost的80端口进行访问；</li>
+<li>我们特殊配置了一个“/apis”目录的访问，并且对url执行了重写，最后使以“/apis”开头的地址（访问时的地址）都转到“<a href="http://localhost:82”（目标服务器地址）进行处理；">http://localhost:82”（目标服务器地址）进行处理；</a></li>
+<li>rewrite  ^/apis/(.<em>)$ /$1 break;<br> rewrite代表重写拦截进来的请求，并且只能对域名后边以“/apis”开头的起作用，例如<a href="http://www.a.com/apis/msg?x=1重写。只对/apis重写。">www.a.com/apis/msg?x=1重写。只对/apis重写。</a><br> rewrite后面的参数是一个简单的正则 ^/apis/(.</em>)$ ,$1代表正则中的第一个(),$2代表第二个()的值,以此类推。<br> break代表匹配一个之后停止匹配。</li>
+</ol>
+<ul>
+<li>访问地址修改<br>配置了nginx，那么所有的访问都要走nginx，而不是走网站原本的地址（A网站localhost:81,B网站localhost:82）。所以要修改A网站中的ajax访问地址，把访问地址由“ <a href="http://localhost:82/api/values”">http://localhost:82/api/values”</a> 改成  “/apis/api/values”<br><code>`</code><br><h2>Index</h2><div id="show"></div>
+
+</li>
+</ul>
+<p><script type="text/javascript"><br>        $(function () {<br>            $.get(“/apis/api/values”, {}, function (result) {<br>                $(“#show”).html(result);<br>            })<br>        })<br></script><p></p>
+<pre><code>然后在浏览器中访问B的数据就可以成功获取了。
+
+
+##四、nodejs 中间件代理跨域
+node中间件实现跨域代理，原理大致与nginx相同，都是通过开启一个代理服务器（同源），实现数据的转发。
+由于我所试验 nodejs 跨域的例子是已有的Vue项目，配置代理后实现了跨域获取数据，下面的例子分“非 Vue”和“Vue”两种进行说明。
+
+1. 非 Vue 框架的跨域
+    利用node + express + http-proxy-middleware搭建一个proxy服务器。
+- 安装 node 环境、 express、 http-proxy-middleware
+&gt;***express***是基于 Node.js 平台，快速、开放、极简的 web 开发框架。
+&gt;***http-proxy-middleware*** 是专门用于 http 代理的一个 node 中间件，适用于*connect*, *express*, *browser-sync* 等等，由热门的*http-proxy* 驱动。
+
+- 新建 js 文件： nodeProxy.js
+</code></pre><p>“use strict”;<br>const express = require(‘express’);<br>const path = require(‘path’);<br>const app = express();<br>const request = require(‘request’);</p>
+<p>// 配置静态文件服务中间件<br>let serverUrl=’<a href="http://192.168.1.220:8080&#39;" target="_blank" rel="noopener">http://192.168.1.220:8080&#39;</a>; // 目标后端服务地址<br>app.use(express.static(path.join(__dirname, ‘./‘))); //静态资源 index.html 和node代码在一个目录下<br>app.use(‘/‘, function(req, res) {<br>  let url = serverUrl + req.url; // req.url 传入的接口路径<br>  req.pipe(request(url)).pipe(res);<br>});</p>
+<p>app.listen(3000,’127.0.0.1’, function () {//前端 ajax 地址写 <a href="http://127.0.0.1:3000/" target="_blank" rel="noopener">http://127.0.0.1:3000/</a><br>  console.log(‘server is running at port 3000’); // 3000为将要启动的端口<br>});</p>
+<pre><code>
+- 运行 node nodeProxy.js
+  node 做代理转发请求服务器，可以跨域请求数据。
+
+2. Vue 框架的跨域
+    利用node + webpack + webpack-dev-server代理接口跨域。在开发环境下，由于vue渲染服务和接口代理服务都是webpack-dev-server同一个，所以页面与代理接口之间不再跨域，无须设置headers跨域信息了。
+
+- 安装中间件 http-proxy-middleware 和 express，已经有的话就不必装了。
+  使用命令：
+&gt;npm install --save-dev express http-proxy-middleware
+
+- webpack文件配置
+  我使用的vue-cli, webpack 版本为 3.8.1。
+  找到项目中config文件夹，然后打开index.js, 看到如下片段，进行配置:
+</code></pre><p>module.exports = {<br>  dev: {<br><a href="http://192.168.1.220:8080/gxtz/api/login" target="_blank" rel="noopener">http://192.168.1.220:8080/gxtz/api/login</a><br>    // Paths<br>    assetsSubDirectory: ‘static’,<br>    assetsPublicPath: ‘/‘,<br>    proxyTable: {<br>      ‘/api/‘: {<br>        tartget: ‘<a href="http://192.168.1.220:8080&#39;" target="_blank" rel="noopener">http://192.168.1.220:8080&#39;</a>,<br>        changeOrigin: true,<br>        pathRewrite: {‘^/api/‘: ‘/‘}<br>      }<br>    },</p>
+<pre><code>// Various Dev Server settings
+host: &#39;localhost&#39;, // can be overwritten by process.env.HOST
+port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+
+/**
+ * Source Maps
+ */
+
+// https://webpack.js.org/configuration/devtool/#development
+devtool: &#39;#source-map&#39;,
+
+#其他省略
+</code></pre><p>  },<br>}</p>
+<pre><code>这样配置完，浏览器请求地址变成如：http://localhost:8000/gxtz-server-web/*  就会匹配paths通过，进行代理转发到目标 http://192.168.1.220 上。
+
+配置相关属性含义和前面 nginx 中相同。这样就可以进行代理了。
+
+##五、WebSocket协议跨域
+WebSocket protocol是HTML5一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是server push技术的一种很好的实现。
+原生WebSocket API使用起来不太方便，我们使用Socket.io，它很好地封装了webSocket接口，提供了更简单、灵活的接口，也对不支持webSocket的浏览器提供了向下兼容。
+关于WebSocket我没还没有自己做实例去验证跨域，但是WebSocket本身支持跨域，只要会使用就行，之前写小程序使用过，但是代码封装程度高不适合作为例子看。以下例子是从[前端常见跨域解决方案（全）](https://segmentfault.com/a/1190000011145364) 摘抄来的，可以参考一下。
+
+- 前端代码:
+</code></pre><p><div>user input：<input type="text"></div></p>
+<p><script src="./socket.io.js"></script></p>
+<p><script><br>var socket = io(‘<a href="http://www.domain2.com:8080&#39;)">http://www.domain2.com:8080&#39;)</a>;</p>
+<p>// 连接成功处理<br>socket.on(‘connect’, function() {<br>    // 监听服务端消息<br>    socket.on(‘message’, function(msg) {<br>        console.log(‘data from server: —&gt; ‘ + msg);<br>    });</p>
+<pre><code>// 监听服务端关闭
+socket.on(&#39;disconnect&#39;, function() { 
+    console.log(&#39;Server socket has closed.&#39;); 
+});
+</code></pre><p>});</p>
+<p>document.getElementsByTagName(‘input’)[0].onblur = function() {<br>    socket.send(this.value);<br>};<br></script></p>
+<pre><code>
+- Nodejs socket后台：
+</code></pre><p>var http = require(‘http’);<br>var socket = require(‘socket.io’);</p>
+<p>// 启http服务<br>var server = http.createServer(function(req, res) {<br>    res.writeHead(200, {<br>        ‘Content-type’: ‘text/html’<br>    });<br>    res.end();<br>});</p>
+<p>server.listen(‘8080’);<br>console.log(‘Server is running at port 8080…’);</p>
+<p>// 监听socket连接<br>socket.listen(server).on(‘connection’, function(client) {<br>    // 接收信息<br>    client.on(‘message’, function(msg) {<br>        client.send(‘hello：’ + msg);<br>        console.log(‘data from client: —&gt; ‘ + msg);<br>    });</p>
+<pre><code>// 断开处理
+client.on(&#39;disconnect&#39;, function() {
+    console.log(&#39;Client socket has closed.&#39;); 
+});
+</code></pre><p>});</p>
+<pre><code>
+#结尾
+简单的总结概括：
+- jsonp
+  适用于访问接口get请求返回值是json类型，又是跨域的情况。
+  1）只支持 get 请求；
+  2）需要后端配合，能够返回 callback 返回希望得到的数据；
+  3）存在一定的安全性问题，不能防止滥用跨域请求的非法网站恶意调用。使用的话需做好安全防范；
+
+- cors
+  由于CORS是W3C中一项较“新”的方案，目前，浏览器支持该功能(IE8+：IE8/9需要使用XDomainRequest对象来支持CORS），CORS也已经成为主流的跨域解决方案。
+  1）纯后端设置，无需前端做处理，如果需要携带cookie，前后端都要配置，前端需要配置&quot;withCredetails&quot;: &quot;true;
+
+- 代理
+  1）nginx 反向代理，一般适用于外网访问不了的内部网络请求，做反向代理来获取数据；
+  2）nodejs 中间件代理，前后端分离引起跨域问题（从原理看nginx 反向代理应该也适用），开发阶段前后台不同源的情况。
+
+其他的没有详细描述。在使用过程中就能够知晓很明确的使用场景，后续我再陆续补充。
+
+#参考链接
+[前端常见跨域解决方案（全）](https://segmentfault.com/a/1190000011145364)
+[jQuery jsonp跨域请求](https://www.cnblogs.com/chiangchou/p/jsonp.html)
+
+[script 标签加载文件](https://blog.csdn.net/qq_24520119/article/details/70154369) 
+
+[浏览器同源政策及其规避方法-阮一峰](http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html) 
+
+[cors跨域解析-阮一峰](http://www.ruanyifeng.com/blog/2016/04/cors.html) 
+
+[http header 的一些含义](https://cloud.tencent.com/developer/section/1189898)
+
+还有关于 iframe 等相关的可以参考阮一峰的 [浏览器同源政策及其规避方法](http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)
+
+如果有没理解的也可以去这些博客找找灵感~~
+
+
+
+* * *
+【注解1】使用XMLHttpRequest (XHR)对象可以与服务器交互。您可以从URL获取数据，而无需让整个的页面刷新。这使得Web页面可以只更新页面的局部，而不影响用户的操作。
+
+尽管名称如此，XMLHttpRequest可以用于获取任何类型的数据，而不仅仅是XML，它还支持   [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)以外的协议(包括文件和ftp)。
+
+【注解2】前端将回调函数传到后台，后台将要返回的数据绑定到回调函数上，这时候前端的回调中就可以拿到数据了，在后台执行响应response的相关语句后在前端的请求success中才会拿到。
+
+```Java
+result = callback + &quot;(&quot; +result+&quot;)&quot;; // 绑定前端传入回调函数
+response.getWriter().write(result); // 后台将数据作为响应带回。不加这一句前端指定的callback对应函数能拿到数据，但是ajax请求success中是获取不到数据的。
+</code></pre><p>对于更详细的XMLHttpRequest请求内容可以参考：<a href="https://segmentfault.com/a/1190000004322487" target="_blank" rel="noopener">使用XMLHttpRequest</a></p>
+<hr>
+</li></ol>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 gitcoment -->
+<div id="gitment-comment">
+    <!-- Gitment 评论框 -->
+<div id="container"></div>
+</div>
+<style>
+    #gitment-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'Sat Dec 29 2018 09:42:07 GMT+0800', // 可选。默认为 location.href
+        owner: 'Hertz9409',
+        repo: 'Hertz9409.github.io',
+        oauth: {
+            client_id: '0d96b743114c3388ac0e',
+            client_secret: '3afa368ace511a47ff0ce3d70cf389244470cd80',
+        },
+    })
+    gitment.render('container')
+</script>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/XDATA.Blog/2018/11/04/FRONTEND/Vue实践小结/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/XDATA.Blog/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/XDATA.Blog/img/avatar.png" alt="XDATA's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/XDATA.Blog/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/XDATA.Blog/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/XDATA.Blog/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/XDATA.Blog/archives/2018/10/">十月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/XDATA.Blog/archives/2018/09/">九月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/XDATA.Blog/archives/2018/08/">八月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/XDATA.Blog/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/XDATA.Blog/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/XDATA.Blog/categories/frontend/">frontend<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/XDATA.Blog/categories/hexo/">hexo<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/XDATA.Blog/categories/mobile/">mobile<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/XDATA.Blog/categories/tools/">tools<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/XDATA.Blog/categories/webpack/">webpack<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/XDATA.Blog/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">12</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/DIST-XDATA" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2018&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>DIST.XDATA Blog
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","/XDATA.Blog/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==", true)</script>
+
+
+
+    <script>lsloader.load("js_js","/XDATA.Blog/js/js.min.js?V/53wGualMuiPM3xoetD5Q==", true)</script>
+
+
+
+    <script>lsloader.load("np_js","/XDATA.Blog/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- Gitment -->
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/XDATA.Blog/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","/XDATA.Blog/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

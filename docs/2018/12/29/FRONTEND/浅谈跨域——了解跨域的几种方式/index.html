@@ -244,7 +244,7 @@
 
     
         <meta property="article:published_time" content="Sat Dec 29 2018 09:42:07 GMT+0800">
-        <meta property="article:modified_time" content="Sat Dec 29 2018 11:23:04 GMT+0800">
+        <meta property="article:modified_time" content="Sat Dec 29 2018 11:31:02 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -267,7 +267,7 @@
     "mainEntityOfPage": "https://dist-xdata.github.io/XDATA.Blog/XDATA.Blog/2018/12/29/FRONTEND/浅谈跨域——了解跨域的几种方式/index.html",
     "headline": "浅谈跨域--了解跨域的几种方式",
     "datePublished": "Sat Dec 29 2018 09:42:07 GMT+0800",
-    "dateModified": "Sat Dec 29 2018 11:23:04 GMT+0800",
+    "dateModified": "Sat Dec 29 2018 11:31:02 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "XDATA",
@@ -561,8 +561,7 @@
 <p>第1、2 条两种情况其实和表格中第四个的情况都是一回事，是属于 “域名和域名对应相同 IP” 的情况。后来我使用了内网的IP去设置，使授权回调IP和配置在公众号菜单访问的地址链接中的IP保持一致，完成了授权。</p>
 </li>
 </ul>
-<p>##四、解决方案</p>
-<ul>
+<h2 id="四、解决方案"><a href="#四、解决方案" class="headerlink" title="四、解决方案"></a>四、解决方案</h2><ul>
 <li><p>通过 jsonp 跨域</p>
 </li>
 <li><p>document.domain + iframe 跨域</p>
@@ -582,10 +581,8 @@
 <li><p>WebSocket 协议跨域</p>
 </li>
 </ul>
-<p>#跨域的几种解决方案</p>
-<p>##一、jsonp 方式<br>jsonp (json with padding) 是 json 的一种“使用模式”，是为了解决跨域问题而产生的解决方案。</p>
-<p>####1、jsonp 产生思路：</p>
-<ol>
+<h1 id="跨域的几种解决方案"><a href="#跨域的几种解决方案" class="headerlink" title="跨域的几种解决方案"></a>跨域的几种解决方案</h1><h2 id="一、jsonp-方式"><a href="#一、jsonp-方式" class="headerlink" title="一、jsonp 方式"></a>一、jsonp 方式</h2><p>jsonp (json with padding) 是 json 的一种“使用模式”，是为了解决跨域问题而产生的解决方案。</p>
+<h4 id="1、jsonp-产生思路："><a href="#1、jsonp-产生思路：" class="headerlink" title="1、jsonp 产生思路："></a>1、jsonp 产生思路：</h4><ol>
 <li>AJAX 直接请求普通文件存在跨域无权限访问的问题, 尽管是静态页面；</li>
 <li>我们在调用 js 文件的时候又不受跨域影响, 比如引入 jquery 框架的时候（通过<script>标签引入）；</li>
 <li>凡是拥有 src 这个属性的标签都可以跨域例如 <script> <img> <iframe>;</li>
@@ -593,7 +590,7 @@
 <li>json 是一个轻量级的数据格式,还被 js 原生支持；</li>
 <li>为了便于客户端使用数据，逐渐形成了一种非正式传输协议，人们把它称作<strong>JSONP</strong>，该协议的一个要点就是允许用户传递一个callback 参数给服务端；</li>
 </ol>
-<p>####2、举例：<br><strong>以下是使用jQuery的jsonp发起跨域请求的例子描述，并总结。为了将过程描述清楚，内容过长，请谅解。</strong></p>
+<h4 id="2、举例："><a href="#2、举例：" class="headerlink" title="2、举例："></a>2、举例：</h4><p><strong>以下是使用jQuery的jsonp发起跨域请求的例子描述，并总结。为了将过程描述清楚，内容过长，请谅解。</strong></p>
 <ul>
 <li><p>我们先来看一看模拟静态文件访问跨域情况：<br>只前端自己写一写代码，在不同端口形成的跨域情况下进行模拟；<br>MacBook 的本地服务端口配置我将会在后续给出。<br>​    1. 准备环境<br>​      Macbook users 路径下的站点，用自带Apache 配置一个 <em>8001 端口，Apache默认端口 </em>80 (/Library/WebServer/Document) 端口。端口不一样，构成跨域条件。</p>
 <pre><code>2. 开始模拟，使用 &lt;script&gt; 标签实现跨域访问
@@ -764,51 +761,54 @@ $ajax({
 <p><img src="https://upload-images.jianshu.io/upload_images/3402395-c7af00d5d2dea07d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="jQuery jsonp 方式请求结果截图.jpg"></p>
 <p>以上的例子能简单看到 jsonp 是能够完成跨域请求的，结合前后台的配合，也更好理解怎么使用 jsonp 。</p>
 <ul>
-<li>我们再来简单看下如何指定 jsonp 回调函数：<br>以下的例子和解说我搬运自：<a href="https://www.cnblogs.com/chiangchou/p/jsonp.html，看完醍醐灌顶。">https://www.cnblogs.com/chiangchou/p/jsonp.html，看完醍醐灌顶。</a><br>上代码：<br><code>`</code>js<br>1 &lt;%@ page pageEncoding=”utf-8” contentType=”text/html;charset=UTF-8”  language=”java” %&gt;<br>2 <html><br>3 <head><br>4     <title>跨域测试</title><br>5     <script src="js/jquery-1.7.2.js"></script><br>6     <script><br>7<br>8         function showData (data) {<br>9             console.info(“调用showData”);<br>10<br>11             var result = JSON.stringify(data);<br>12             $(“#text”).val(result);<br>13         }<br>14<br>15         $(document).ready(function () {<br>16<br>17 //            window.showData = function  (data) {<br>18 //                console.info(“调用showData”);<br>19 //<br>20 //                var result = JSON.stringify(data);<br>21 //                $(“#text”).val(result);<br>22 //            }<br>23<br>24             $(“#btn”).click(function () {<br>25<br>26                 $.ajax({<br>27                     url: “<a href="http://localhost:9090/student&quot;">http://localhost:9090/student&quot;</a>,<br>28                     type: “GET”,<br>29                     dataType: “jsonp”,  //指定服务器返回的数据类型<br>30                     jsonpCallback: “showData”,  //指定回调函数名称<br>31                     success: function (data) {<br>32                         console.info(“调用success”);<br>33                     }<br>34                 });<br>35             });<br>36<br>37         });<br>38     </script><br>39 <br>40 <body><br>41     <input id="btn" type="button" value="跨域获取数据"><br>42     <textarea id="text" style="width: 400px; height: 100px;"></textarea><br>43<br>44 </body><br>45 </p></li>
+<li><p>我们再来简单看下如何指定 jsonp 回调函数：<br>以下的例子和解说我搬运自：<a href="https://www.cnblogs.com/chiangchou/p/jsonp.html，看完醍醐灌顶。">https://www.cnblogs.com/chiangchou/p/jsonp.html，看完醍醐灌顶。</a><br>上代码：<br><code>`</code>js<br>&lt;%@ page pageEncoding=”utf-8” contentType=”text/html;charset=UTF-8”  language=”java” %&gt;</p>
+<html><br><head><br>    <title>跨域测试</title><br>    <script src="js/jquery-1.7.2.js"></script><br>    <script><br><br>        function showData (data) {<br>            console.info(“调用showData”);<br><br>           var result = JSON.stringify(data);<br>           $(“#text”).val(result);<br>       }<br><br>       $(document).ready(function () {<br><br>//            window.showData = function  (data) {<br>//                console.info(“调用showData”);<br>//<br>//                var result = JSON.stringify(data);<br>//                $(“#text”).val(result);<br>//            }<br><br>           $(“#btn”).click(function () {<br><br>               $.ajax({<br>                  url: “<a href="http://localhost:9090/student&quot;">http://localhost:9090/student&quot;</a>,<br>                   type: “GET”,<br>                   dataType: “jsonp”,  //指定服务器返回的数据类型<br>                   jsonpCallback: “showData”,  //指定回调函数名称<br>                   success: function (data) {<br>                       console.info(“调用success”);<br>                   }<br>               });<br>           });<br><br>       });<br>   </script><br><br><body><br>   <input id="btn" type="button" value="跨域获取数据"><br>   <textarea id="text" style="width: 400px; height: 100px;"></textarea><br><br></body><br>
+
+</p></li>
 </ul>
 <pre><code>回调函数可以写到&lt;script&gt;里（默认属于window对象），或者指明写到window对象里，看jQuery源码，可以看到jQuery调用回调函数时，是调用的window.callback。代码如上，看调用结果发现，请求时带的参数是callback=showData,然后再调用了success，后台先将参数放进回调函数里，本质上前端是插入了一个脚本，放入数据，就等于执行了那个回调方法，再进行网络请求的响应处理，所以回调函数先拿到了数据，success再走。success是返回成功以后必定会调的函数。
 
 如果想要更改 callback 这个参数的名称，参考以下代码第23行。
 ```js
- 1 &lt;%@ page pageEncoding=&quot;utf-8&quot; contentType=&quot;text/html;charset=UTF-8&quot;  language=&quot;java&quot; %&gt;
- 2 &lt;html&gt;
- 3 &lt;head&gt;
- 4     &lt;title&gt;跨域测试&lt;/title&gt;
- 5     &lt;script src=&quot;js/jquery-1.7.2.js&quot;&gt;&lt;/script&gt;
- 6     &lt;script&gt;
- 7 
- 8         function showData (data) {
- 9             console.info(&quot;调用showData&quot;);
-10 
-11             var result = JSON.stringify(data);
-12             $(&quot;#text&quot;).val(result);
-13         }
-14 
-15         $(document).ready(function () {
-16 
-17             $(&quot;#btn&quot;).click(function () {
-18 
-19                 $.ajax({
-20                     url: &quot;http://localhost:9090/student&quot;,
-21                     type: &quot;GET&quot;,
-22                     dataType: &quot;jsonp&quot;,  //指定服务器返回的数据类型
-23                     jsonp: &quot;theFunction&quot;,   //指定参数名称，前端调用时接口后面要指定的参数名(必须，作为后台参数，执行该回调方法，便会把数据带回)
-24                     jsonpCallback: &quot;showData&quot;,  //指定回调函数名称，本地接收数据的函数。(必须)
-25                     success: function (data) {
-26                         console.info(&quot;调用success&quot;);
-27                     }
-28                 });
-29             });
-30 
-31         });
-32     &lt;/script&gt;
-33 &lt;/head&gt;
-34 &lt;body&gt;
-35     &lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;跨域获取数据&quot; /&gt;
-36     &lt;textarea id=&quot;text&quot; style=&quot;width: 400px; height: 100px;&quot;&gt;&lt;/textarea&gt;
-37 
-38 &lt;/body&gt;
-39 &lt;/html&gt;
+  &lt;%@ page pageEncoding=&quot;utf-8&quot; contentType=&quot;text/html;charset=UTF-8&quot;  language=&quot;java&quot; %&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+      &lt;title&gt;跨域测试&lt;/title&gt;
+      &lt;script src=&quot;js/jquery-1.7.2.js&quot;&gt;&lt;/script&gt;
+      &lt;script&gt;
+
+          function showData (data) {
+              console.info(&quot;调用showData&quot;);
+
+             var result = JSON.stringify(data);
+             $(&quot;#text&quot;).val(result);
+         }
+
+         $(document).ready(function () {
+
+             $(&quot;#btn&quot;).click(function () {
+
+                 $.ajax({
+                     url: &quot;http://localhost:9090/student&quot;,
+                     type: &quot;GET&quot;,
+                     dataType: &quot;jsonp&quot;,  //指定服务器返回的数据类型
+                     jsonp: &quot;theFunction&quot;,   //指定参数名称，前端调用时接口后面要指定的参数名(必须，作为后台参数，执行该回调方法，便会把数据带回)
+                     jsonpCallback: &quot;showData&quot;,  //指定回调函数名称，本地接收数据的函数。(必须)
+                    success: function (data) {
+                        console.info(&quot;调用success&quot;);
+                     }
+                 });
+             });
+
+         });
+     &lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+     &lt;input id=&quot;btn&quot; type=&quot;button&quot; value=&quot;跨域获取数据&quot; /&gt;
+     &lt;textarea id=&quot;text&quot; style=&quot;width: 400px; height: 100px;&quot;&gt;&lt;/textarea&gt;
+
+ &lt;/body&gt;
+ &lt;/html&gt;
 </code></pre><p>如此以来后台也要跟着改变，找到我前面的例子<strong>jQuery 的 jsonp 方式跨域请求</strong>中后台代码，找到下图对应位置并作出修改：</p>
 <p><img src="https://upload-images.jianshu.io/upload_images/3402395-523d94f4102f5dae.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="后台修改代码提示"></p>
 <p>把getParameter(“callback”)里的callback改成前面23行代码配置的函数名“theFunction”即可。</p>
@@ -826,8 +826,7 @@ $ajax({
 <li>主要利用了 script（img, iframe等有src属性的标签）可以跨站点访问的特性，且只能用 GET 请求，需要服务端做点配合，并且需要信任服务器(安全考虑)。jquery 的 jsonp ajax 只是封装了这个过程，让你看上去和普通 ajax 没什么区别，其实却一点关系都没有。</li>
 </ol>
 <p>友情提示：axios 不支持 jsonp ,要用的话，可以装插件或者使用原生实现。</p>
-<p>##二、跨域资源共享</p>
-<p><strong>跨域资源共享（CORS）是一种网络浏览器的技术规范，它为web服务器定义了一种方式，允许网页从不同的域访问资源。CORS就是为了让AJAX可以实现可控的跨域访问而生的。</strong></p>
+<h2 id="二、跨域资源共享"><a href="#二、跨域资源共享" class="headerlink" title="二、跨域资源共享"></a>二、跨域资源共享</h2><p><strong>跨域资源共享（CORS）是一种网络浏览器的技术规范，它为web服务器定义了一种方式，允许网页从不同的域访问资源。CORS就是为了让AJAX可以实现可控的跨域访问而生的。</strong></p>
 <h4 id="1、内部机制讲解"><a href="#1、内部机制讲解" class="headerlink" title="1、内部机制讲解"></a>1、内部机制讲解</h4><h6 id="1-简介"><a href="#1-简介" class="headerlink" title="1) 简介"></a>1) 简介</h6><p>通过在HTTP Header中加入扩展字段，服务器在相应网页头部加入字段表示允许访问的domain和HTTP method，客户端检查自己的域是否在允许列表中，决定是否处理响应。</p>
 <p>CORS 需要浏览器和服务器同时支持。目前所有浏览器都支持该功能，IE浏览器不能低于IE10。</p>
 <p>整个 CORS 通信过程，都是浏览器自动完成，不需要用户参与。对于开发者来说，CORS 通信与同源的 AJAX 通信没有差别，代码完全一样。浏览器一旦发现 AJAX 请求跨源，就会自动添加一些附加的头信息，有时还会多出一次附加的请求，但用户不会有感觉。</p>
@@ -993,7 +992,7 @@ Content-Type: text/html; charset=utf-8
 <p>上面头信息中，<code>Access-Control-Allow-Origin</code>字段是每次回应都必定包含的。</p>
 </li>
 </ul>
-<p>####2、如何实现 CORS<br>只需要在后台中加上配置来允许跨域请求。如果还需要携带cookie在前端被请求的Response header中加入允许携带配置，就可以实现跨域访问了！</p>
+<h4 id="2、如何实现-CORS"><a href="#2、如何实现-CORS" class="headerlink" title="2、如何实现 CORS"></a>2、如何实现 CORS</h4><p>只需要在后台中加上配置来允许跨域请求。如果还需要携带cookie在前端被请求的Response header中加入允许携带配置，就可以实现跨域访问了！</p>
 <p>以下也是后台小伙伴友情提供，这里再次感谢~(<em>^__^</em>) 嘻嘻……<br>下面我们来看一下 Java 的Tomcat 配置 cors:<br>首先需要下载 jar 包cors-filter与java-property-utils：</p>
 <pre><code class="java">&lt;!-- https://mvnrepository.com/artifact/com.thetransactioncompany/cors-filter --&gt;
 &lt;dependency&gt;
@@ -1071,11 +1070,11 @@ Content-Type: text/html; charset=utf-8
 <h4 id="4、CORS主要应用场景："><a href="#4、CORS主要应用场景：" class="headerlink" title="4、CORS主要应用场景："></a>4、CORS主要应用场景：</h4><ul>
 <li>后台使用 restful API 架构，前后台不在同一服务器，需要用到。</li>
 </ul>
-<p>##三、nginx 反向代理接口跨域<br>有反向代理，那就肯定有正向代理。我们先来简单说说这个正、反向代理是个啥。</p>
+<h2 id="三、nginx-反向代理接口跨域"><a href="#三、nginx-反向代理接口跨域" class="headerlink" title="三、nginx 反向代理接口跨域"></a>三、nginx 反向代理接口跨域</h2><p>有反向代理，那就肯定有正向代理。我们先来简单说说这个正、反向代理是个啥。</p>
 <p>关于代理，生活中代理场景，中介。</p>
-<p>###1、正向代理原理<br>正向代理类似一个跳板机，把浏览器访问过程委托给代理去做，代理访问外部资源。<br><img src="https://upload-images.jianshu.io/upload_images/3402395-ba20a909839d2336.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="正向代理原理示意图"></p>
+<h3 id="1、正向代理原理"><a href="#1、正向代理原理" class="headerlink" title="1、正向代理原理"></a>1、正向代理原理</h3><p>正向代理类似一个跳板机，把浏览器访问过程委托给代理去做，代理访问外部资源。<br><img src="https://upload-images.jianshu.io/upload_images/3402395-ba20a909839d2336.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="正向代理原理示意图"></p>
 <p>举个例子：<br>我是一个用户，我访问不了某网站，但是我能访问一个代理服务器，这个代理服务器能访问那个我不能访问的网站，于是我先连上代理服务器,告诉他我需要那个无法访问网站的内容，代理服务器去取回来,然后返回给我。从目标网站的角度，只在代理服务器来取内容的时候有一次记录，有时候并不知道是用户的请求，也隐藏了用户的资料，这取决于代理告不告诉网站。<br>类似场景比如我们在外网去访问公司内网服务器B，我们先设置VPN，通过VPN将我们的请求转发到内网的A服务器，然后A把请求发到B上，响应内容返回到A，再由A通过VPN返回到我们。<br>工作流程可以描述为：<br>用户设置代理服务器，用户访问url，代理服务器代替用户访问并将网页内容返回。</p>
-<p>###2、反向代理服务器工作原理<br><strong>反向代理（Reverse Proxy）</strong>方式是指后台内部网络服务器委托代理服务器，以代理服务器来接受Internet上的连接请求，然后将请求转发给内部网络上的服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。<br>用户访问的是代理服务器，前端是不知道后台真实地址，只知道代理地址。<br><img src="https://upload-images.jianshu.io/upload_images/3402395-b0d072681e6e1008.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="反向代理原理示意图"></p>
+<h3 id="2、反向代理服务器工作原理"><a href="#2、反向代理服务器工作原理" class="headerlink" title="2、反向代理服务器工作原理"></a>2、反向代理服务器工作原理</h3><p><strong>反向代理（Reverse Proxy）</strong>方式是指后台内部网络服务器委托代理服务器，以代理服务器来接受Internet上的连接请求，然后将请求转发给内部网络上的服务器；并将从服务器上得到的结果返回给Internet上请求连接的客户端，此时代理服务器对外就表现为一个服务器。<br>用户访问的是代理服务器，前端是不知道后台真实地址，只知道代理地址。<br><img src="https://upload-images.jianshu.io/upload_images/3402395-b0d072681e6e1008.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="反向代理原理示意图"></p>
 <p>再举个栗子：<br>我是一个用户，我可以访问某一个网站，网站的数据是来源于我访问不到的内部网络上的内容服务器，内容服务器设置了可以访问自己的代理服务器。于是我向目标内容服务器发起请求，其实我访问的是内容服务器设置的代理服务器，这个代理服务器将我的请求转发到目标内容服务器上，获取到数据后再返回给网站上，我就可以看见了。<br><img src="https://upload-images.jianshu.io/upload_images/3402395-428692e0b82edb8e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="反向代理工作流程示意图"><br>工作流程可以描述为：<br>和正向代理相反，由目标内容服务器设置代理服务器，代理转发用户发起的请求，获取数据再返回给用户。</p>
 <p>###3、使用 nginx 反向代理解决跨域<br><em>Nginx</em> (engine x) 是一个高性能的<a href="https://baike.baidu.com/item/HTTP">HTTP</a>和<a href="https://baike.baidu.com/item/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/7793488">反向代理</a>服务，也是一个IMAP/POP3/SMTP服务。</p>
 <p>我们前面提到跨域是浏览器的同源策略导致的，同源策略它是浏览器针对脚本攻击采取的一种安全策略，并不是 HTTP 协议的一部分。所以服务器端调用 HTTP 接口只是使用了 HTTP 协议，是不会执行 js 脚本的，不需要同源策略，也就不会形成跨域问题。<br>我们使用代理（同源）服务器发起请求，再由代理（同源）服务器请求内部服务器。</p>
@@ -1147,8 +1146,7 @@ add_header Access-Control-Allow-Credentials true;
 <p><script type="text/javascript"><br>        $(function () {<br>            $.get(“/apis/api/values”, {}, function (result) {<br>                $(“#show”).html(result);<br>            })<br>        })<br></script><p></p>
 <pre><code>然后在浏览器中访问B的数据就可以成功获取了。
 
-
-##四、nodejs 中间件代理跨域
+## 四、nodejs 中间件代理跨域
 node中间件实现跨域代理，原理大致与nginx相同，都是通过开启一个代理服务器（同源），实现数据的转发。
 由于我所试验 nodejs 跨域的例子是已有的Vue项目，配置代理后实现了跨域获取数据，下面的例子分“非 Vue”和“Vue”两种进行说明。
 
@@ -1194,7 +1192,7 @@ devtool: &#39;#source-map&#39;,
 
 配置相关属性含义和前面 nginx 中相同。这样就可以进行代理了。
 
-##五、WebSocket协议跨域
+## 五、WebSocket协议跨域
 WebSocket protocol是HTML5一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯，是server push技术的一种很好的实现。
 原生WebSocket API使用起来不太方便，我们使用Socket.io，它很好地封装了webSocket接口，提供了更简单、灵活的接口，也对不支持webSocket的浏览器提供了向下兼容。
 关于WebSocket我没还没有自己做实例去验证跨域，但是WebSocket本身支持跨域，只要会使用就行，之前写小程序使用过，但是代码封装程度高不适合作为例子看。以下例子是从[前端常见跨域解决方案（全）](https://segmentfault.com/a/1190000011145364) 摘抄来的，可以参考一下。
@@ -1222,8 +1220,9 @@ client.on(&#39;disconnect&#39;, function() {
 });
 </code></pre><p>});</p>
 <pre><code>
-#结尾
+# 结尾
 简单的总结概括：
+
 - jsonp
   适用于访问接口get请求返回值是json类型，又是跨域的情况。
   1）只支持 get 请求；
@@ -1240,7 +1239,7 @@ client.on(&#39;disconnect&#39;, function() {
 
 其他的没有详细描述。在使用过程中就能够知晓很明确的使用场景，后续我再陆续补充。
 
-#参考链接
+# 参考链接
 [前端常见跨域解决方案（全）](https://segmentfault.com/a/1190000011145364)
 [jQuery jsonp跨域请求](https://www.cnblogs.com/chiangchou/p/jsonp.html)
 
